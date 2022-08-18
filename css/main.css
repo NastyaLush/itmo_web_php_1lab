@@ -1,0 +1,139 @@
+html{
+  background: url(https://phonoteka.org/uploads/posts/2021-06/1623882692_28-phonoteka_org-p-pattern-doroga-krasivo-34.jpg)
+no-repeat fixed center/cover;
+  position: relative;
+  color: #D3F2F6;
+  overflow-y: scroll;
+}
+body{
+  background: inherit;
+  display: flex;
+  min-height: 100vh;
+}
+.head{
+  background: rgba(36, 140, 204, 0.65);
+}
+.name{
+  margin-bottom: 5px;
+}
+.attributes{
+
+}
+.normal{
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 10px 20px;
+  position: relative;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.71);
+  background: none;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 4px;
+}
+.warning{
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 10px 10px;
+  position: relative;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.71);
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  background-color: rgba(248, 160, 160, 0.78);
+
+}
+.error, .menu, .y{
+  color: #f34848;
+  font-weight: 700;
+  font-family: 'Shadows Into Light', cursive, sans-serif;
+  text-shadow: 0 1px 2px #000;
+  background: rgba(0, 0, 0, 0.47);
+  border: 2px solid inherit;
+  border-radius: 6px;
+  margin: 8px 6px;
+}
+.y{
+  color: #e1e2ff;
+  background: rgba(0, 0, 0, 0);
+}
+.menu label:before {
+  border-radius: 3px;
+}
+
+select.r {
+  color: white;
+  width: 70px;
+  padding: 5px;
+  background: rgba(38, 38, 38, 0.72);
+  margin: 8px 6px;
+}
+.menu{
+  background: rgba(0, 0, 0, 0);
+  color: #acafe1;
+  text-decoration: underline;
+  letter-spacing: 2px;
+}
+.send{
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-family: 'Shadows Into Light', cursive, sans-serif;
+  width: 80px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 2px solid rgba(161, 161, 161, 0.71);
+  display: inline-block;  
+  margin: 8px 6px;
+  background: #3b3939;
+  text-shadow: 0 1px 3px #000;
+}
+
+.send:hover {
+    background: #595656;
+}
+
+
+.canvas{
+  position: relative;
+  position: relative;
+  margin: auto;
+  width: 400px;
+  height: 400px;
+  color: #D3F2F6;
+  outline: 15px solid rgba(21, 20, 20, 0.2);
+  background: rgb(107, 107, 108);
+  border-radius: 15px;
+  box-shadow: 0px 0px 50px 50px rgba(0, 0, 0, 0.3) inset;
+
+}
+.canvas_column{
+  height: 520px;
+}
+.x{
+  padding: 40px  0 0 0;
+  top: 250px;
+
+}
+.labels{
+  top:30px;
+  background: rgba(0, 0, 0, 0.47);
+}
+table{
+  border: none;
+}
+.table{
+  color: black;
+  background: white;
+  caption-side: bottom;
+  text-align: right;
+  padding: 10px 0;
+  font-size: 14px;
+}
