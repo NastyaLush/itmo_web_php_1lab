@@ -4,7 +4,7 @@ var drawingCanvas = document.getElementById('canvas');
 if(drawingCanvas && drawingCanvas.getContext) {
   var context = drawingCanvas.getContext('2d');
 
-  context.fillStyle = "rgba(116,194,220,0.95)";
+  context.fillStyle = "rgba(127,129,196,0.67)";
   context.beginPath();
   context.moveTo(150,50);
   context.quadraticCurveTo(50,50,50,150);
@@ -115,5 +115,7 @@ canvas.addEventListener('click', function(e) {
   label.classList.add("normal");
   document.getElementById("log_x").textContent= "";
   document.getElementById("log_y").textContent= "";
+  send.classList.add("active")
+  send.classList.remove("no-active")
 })
 
