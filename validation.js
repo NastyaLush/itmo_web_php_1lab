@@ -15,11 +15,11 @@ document.getElementById("x").addEventListener('change', (uvalue)=>{
   else {
     label.classList.remove("warning");
     if( document.getElementById("log_y").textContent == "") {
-      send.classList.add("active")
-      send.classList.remove("no-active")
-    } else {
       send.classList.remove("active")
       send.classList.add("no-active")
+    } else {
+      send.classList.add("active")
+      send.classList.remove("no-active")
     }
     label.classList.add("normal");
     document.getElementById("log_x").textContent= "";

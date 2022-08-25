@@ -1,7 +1,6 @@
 <?php
 session_start();
 ?>
-
 <!doctype html public " -//W3C//DTD HTML 4.01//EN"
         "http://www.w3.org/TR/html4/strict.dtd">
 
@@ -81,7 +80,7 @@ session_start();
         </th>
     </tr>
 </table>
-<script src="js/validation.js"></script>
+<script src="validation.js"></script>
 <script src="canvas.js" type=""></script>
 
 </body>
