@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c6b7f0f-9148-478f-a51a-4dec0dffa7e2" name="Changes" comment="with update mistake">
-      <change afterPath="$PROJECT_DIR$/paint_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_results.php" beforeDir="false" afterPath="$PROJECT_DIR$/create_results.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-    </list>
+    <list default="true" id="2c6b7f0f-9148-478f-a51a-4dec0dffa7e2" name="Changes" comment="with update mistake" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +73,7 @@
       <workItem from="1660938117604" duration="15493000" />
       <workItem from="1661012874353" duration="3876000" />
       <workItem from="1662017143981" duration="6005000" />
-      <workItem from="1662027961507" duration="1276000" />
+      <workItem from="1662027961507" duration="1576000" />
     </task>
     <task id="LOCAL-00001" summary="dark version">
       <created>1660822482968</created>
@@ -185,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662022319147</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="with update mistake">
+      <created>1662029406717</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1662029406717</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

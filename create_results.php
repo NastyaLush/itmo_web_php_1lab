@@ -1,4 +1,5 @@
 <?php
+session_start();
 $time = microtime(true);
 date_default_timezone_set('Europe/Moscow');
 
@@ -84,8 +85,7 @@ if (!($x == "" || $y == "" || $r == "" || !between($x, -3, 3))) {
     }
 }
 
-//$new_url = 'http://localhost:63342/lab_web/index.php?_ijt=4s7lhtb3snhe1oid72gfsej43f&_ij_reload=RELOAD_ON_SAVE';
-header('Location: /');
+header('Location: /lab_web/index.php');
 
 
 
