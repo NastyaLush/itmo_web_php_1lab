@@ -1,5 +1,4 @@
 <?php
-
 $time = microtime(true);
 date_default_timezone_set('Europe/Moscow');
 
@@ -12,28 +11,21 @@ $results = [];
 $last_results='date';
 
 if (isset($_GET["x"])) {
-
-    $x = number_format((float)htmlentities($_GET["x"]), 3);
+    if(is_numeric(htmlentities($_GET["x"]))) {
+        $x = number_format((float)htmlentities($_GET["x"]), 3);
+    }
 }
 if (isset($_GET["y"])) {
-
-    $y = htmlentities($_GET["y"]);
+    if(is_numeric(htmlentities($_GET["y"]))) {
+        $y = number_format(htmlentities($_GET["y"]));
+    }
 
 }
 if (isset($_GET["r"])) {
-
-    $r = htmlentities($_GET["r"]);
+    if(is_numeric(htmlentities($_GET["r"]))) {
+        $r = number_format(htmlentities($_GET["r"]));
+    }
 }
-echo("<table >
-        <tr>
-        <th>X</th>
-        <th>Y</th>
-        <th>R</th>
-        <th>Result</th>
-        <th>Attempt time</th>
-        <th>Process time</th>
-        </tr>"
-);
 function between($x, $x1, $x2)
 {
     return $x >= $x1 && $x <= $x2;
@@ -66,7 +58,6 @@ function is_in_shape($x, $y, $r)
 {
     return is_in_sector($x, $y, $r) || is_in_square($x, $y, $r) || is_in_triangle($x, $y, $r);
 }
-
 if (!($x == "" || $y == "" || $r == "" || !between($x, -3, 3))) {
     if (is_in_shape($x, $y, $r)) {
         $result = 'reach';
@@ -77,6 +68,7 @@ if (!($x == "" || $y == "" || $r == "" || !between($x, -3, 3))) {
 
     if (!isset($_SESSION[$last_results])) {
         $_SESSION[$last_results] = array($date);
+
         $results = $_SESSION[$last_results];
     } else {
         $results = $_SESSION[$last_results];
@@ -91,14 +83,9 @@ if (!($x == "" || $y == "" || $r == "" || !between($x, -3, 3))) {
         $results = $_SESSION[$last_results];
     }
 }
-foreach ($results as $element) {
-    echo("<tr>
-<td>$element[0]</td>
-<td>$element[1]</td>
-<td>$element[2]</td>
-<td>$element[3]</td>
-<td>$element[4]</td>
-<td>$element[5]</td>
-</tr>");
-}
-echo("</table>");
+
+//$new_url = 'http://localhost:63342/lab_web/index.php?_ijt=4s7lhtb3snhe1oid72gfsej43f&_ij_reload=RELOAD_ON_SAVE';
+header('Location: /');
+
+
+

@@ -1,9 +1,8 @@
 <?php
 session_start();
 ?>
-<!doctype html public " -//W3C//DTD HTML 4.01//EN"
-        "http://www.w3.org/TR/html4/strict.dtd">
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -36,7 +35,7 @@ session_start();
     </tr>
     <tr>
         <th>
-            <form class="labels" method="get">
+            <form class="labels" method="get" action="create_results.php">
                 <div class="x">
                     <label for="x" class="menu">Change X:</label>
                     <input class="warning" type="text" name="x" id="x" placeholder="0">
@@ -66,22 +65,54 @@ session_start();
                         <option value="3">3</option>
                     </select>
                 </div>
-                <button type="submit" class="no-active" id="send">send</button>
+                <button type="submit" class="no-active" id="send" >send</button>
             </form>
 
     </tr>
     <tr>
         <th class="table">
+            <?php
+
+            $last_results = 'date';
+            echo ("jj");
+            echo (isset($_SESSION[$last_results]));
+            echo ("jssj");
+            echo("<table >
+        <tr>
+        <th>X</th>
+        <th>Y</th>
+        <th>R</th>
+        <th>Result</th>
+        <th>Attempt time</th>
+        <th>Process time</th>
+        </tr>"
+            );
+            print_r("kjj");
+            if (isset($_SESSION[$last_results])) {
+                print_r("kjj");
+                $results = $_SESSION[$last_results];
+                print_r($results);
+                foreach ($results as $element) {
+                    echo("<tr>
+<td>$element[0]</td>
+<td>$element[1]</td>
+<td>$element[2]</td>
+<td>$element[3]</td>
+<td>$element[4]</td>
+<td>$element[5]</td>
+</tr>");
+                }
+            }
+            echo("</table>");
+
+            ?>
             <div>
-                <?php
-                include 'create_results.php'
-                ?>
+                <script src="validation.js"></script>
+                <script src="canvas.js" type=""></script>
             </div>
         </th>
     </tr>
 </table>
-<script src="validation.js"></script>
-<script src="canvas.js" type=""></script>
 
 </body>
 
