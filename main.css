@@ -5,7 +5,11 @@ html {
     position: relative;
     overflow-y: scroll;
 }
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     background: inherit;
     display: flex;
@@ -15,12 +19,20 @@ body {
 .head {
     background: rgba(0, 0, 0, 0.85);
 }
-
-.main_table {
-    border-collapse: collapse;
-    margin: auto;
-    width: 650px;
+.back{
+    display: grid;
+    grid-template-columns: 1fr 1.9fr 1fr;
 }
+.content{
+    display: grid;
+    grid-template-rows: 70px 600px 300px 500px;
+    grid-row-gap: 10px;
+}
+/*.main_table {*/
+/*    border-collapse: collapse;*/
+/*    margin: auto;*/
+/*    width: 650px;*/
+/*}*/
 
 .full_name, .attributes:hover, .attributes {
     text-decoration: underline;
@@ -99,16 +111,22 @@ body {
     font-family: 'Shadows Into Light', cursive, sans-serif;
     text-shadow: 0 1px 2px #000;
     background: rgba(0, 0, 0, 0.47);
-    border: 2px solid inherit;
     border-radius: 6px;
     margin: 8px 6px;
 }
-
+.checkbox{
+    padding: 7px;
+}
 .y {
+    display: grid;
+    grid-template-rows:50px;
+    grid-template-columns: 100px 280px 200px;
     color: #e1e2ff;
     background: rgba(0, 0, 0, 0);
 }
-
+.r_group{
+    padding: 0 0 0 7px;
+}
 .menu label:before {
     border-radius: 3px;
 }
@@ -161,7 +179,7 @@ select.r {
     color: #D3F2F6;
     outline: 15px solid rgba(117, 114, 114, 0.2);
     background: rgba(43, 43, 45, 0.38);
-    border-radius: 15px;
+    border-radius: 5px;
     box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.3) inset;
 
 }
@@ -171,14 +189,15 @@ select.r {
 }
 
 .canvas_column {
-    height: 520px;
+    padding: 120px;
     background: rgba(7, 7, 7, 0.5);
 }
 
 .x {
-    padding: 40px 0 0 0;
+    display: grid;
+    padding: 10px 0 5px 5px;
     top: 250px;
-
+    grid-template-columns: 1.3fr 2fr 3fr;
 }
 
 .labels {
