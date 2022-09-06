@@ -4,7 +4,7 @@ var drawingCanvas = document.getElementById('canvas');
 if(drawingCanvas && drawingCanvas.getContext) {
   var context = drawingCanvas.getContext('2d');
 
-  context.fillStyle = "rgba(127,129,196,0.67)";
+  context.fillStyle = "rgba(147,127,196,0.67)";
   context.beginPath();
   context.moveTo(150,50);
   context.quadraticCurveTo(50,50,50,150);
@@ -68,7 +68,6 @@ if(drawingCanvas && drawingCanvas.getContext) {
   context.fillText("R", 148, 55);
 }
 function getCursorPosition(canvas, event) {
-  // const rect = canvas.getBoundingClientRect()
   const rect = canvas.getBoundingClientRect()
   let x = event.clientX - rect.left;
   let y = event.clientY - rect.top;
@@ -76,13 +75,14 @@ function getCursorPosition(canvas, event) {
   x=get_x(x,r);
   y=create_y(get_y(y,r),r,x);
   document.getElementById('x').value=x;
+  document.getElementById('x').dispatchEvent(new Event('change'));
 
   let checkbox = document.getElementsByName('y');
   for(let i=0;i<checkbox.length; i++){
     checkbox[i].checked=false;
   }
-
   document.getElementById(y.toString()).checked=true;
+  document.getElementById(y.toString()).dispatchEvent(new Event('change'));
 }
 function get_x(x, r){
   const number = r/130*(x-200);
@@ -111,11 +111,7 @@ function create_y(y, r,x){
 const canvas = document.querySelector('canvas')
 canvas.addEventListener('click', function(e) {
   getCursorPosition(canvas, e);
-  label.classList.remove("warning");
-  label.classList.add("normal");
-  document.getElementById("log_x").textContent= "";
-  document.getElementById("log_y").textContent= "";
-  send.classList.add("active")
-  send.classList.remove("no-active")
+
+
 })
 

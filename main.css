@@ -5,67 +5,60 @@ html {
     position: relative;
     overflow-y: scroll;
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    background: inherit;
-    display: flex;
-    min-height: 100vh;
-}
-
-.head {
-    background: rgba(0, 0, 0, 0.85);
-}
-.back{
-    display: grid;
-    grid-template-columns: 1fr 1.9fr 1fr;
-}
-.content{
-    display: grid;
-    grid-template-rows: 70px 600px 300px 500px;
-    grid-row-gap: 10px;
-}
-/*.main_table {*/
-/*    border-collapse: collapse;*/
-/*    margin: auto;*/
-/*    width: 650px;*/
-/*}*/
-
-.full_name, .attributes:hover, .attributes {
-    text-decoration: underline;
-    padding: 0 15px;
-    text-align: left;
-    letter-spacing: 4px;
-    font-size: 30px;
-    color: rgba(255, 255, 255, 0.89);
-}
-
-.attributes:hover, .attributes {
-    color: rgba(255, 255, 255, 0.51);
-    font-size: 15px;
-    letter-spacing: 1px;
-    font-weight: 100;
-}
-
-.attributes {
-    color: black;
-}
 
 .circle {
-    background-color: rgba(166, 125, 248, 0.29);
+    background-color: rgba(238, 0, 255, 0.07);
     width: 100px;
     height: 50px;
     border-radius: 0 0 50% 50% / 0 0 100% 100%;
     position: absolute;
 }
 
-.circle.b {
-    color: red;
-    width: 100px;
-    height: 50px;
+
+.head {
+    display: grid;
+    background: rgba(0, 0, 0, 0.85);
+    grid-area: header;
+    justify-items: stretch;
+}
+.table{
+    display: grid;
+    grid-area: table;
+    place-self: stretch;
+}
+.labels{
+    display: grid;
+    grid-area: label;
+}
+.canvas{
+    display: grid;
+    grid-area: graphic;
+}
+.content {
+    display: grid;
+    justify-content: stretch;
+    grid-template-areas:
+    "header header"
+    "graphic table"
+    "label table"
+}
+
+
+.full_name, .attributes {
+
+    padding: 0 15px;
+    text-align: left;
+    letter-spacing: 4px;
+    font-size: 30px;
+    color: rgb(239, 231, 218);
+}
+
+
+.attributes {
+    text-decoration: none;
+    color: rgba(243, 236, 236, 0.3);
+    font-size: 15px;
+    padding: 2px 15px;
 }
 
 .head:hover .attributes {
@@ -107,12 +100,16 @@ body {
 
 .error, .menu, .y {
     color: #f34848;
-    font-weight: 700;
-    font-family: 'Shadows Into Light', cursive, sans-serif;
+    font-weight: 800;
+    font-family: 'Shadows Into Light', sans-serif;
     text-shadow: 0 1px 2px #000;
     background: rgba(0, 0, 0, 0.47);
     border-radius: 6px;
     margin: 8px 6px;
+    letter-spacing: 2px;
+}
+.no-warning{
+    background: none;
 }
 .checkbox{
     padding: 7px;
@@ -120,7 +117,7 @@ body {
 .y {
     display: grid;
     grid-template-rows:50px;
-    grid-template-columns: 100px 280px 200px;
+    grid-template-columns: 110px 400px 300px;
     color: #e1e2ff;
     background: rgba(0, 0, 0, 0);
 }
@@ -143,7 +140,7 @@ select.r {
     background: rgba(0, 0, 0, 0);
     color: #acafe1;
     text-decoration: underline;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
 }
 
 .active, .no-active {
@@ -171,12 +168,12 @@ select.r {
 }
 
 
-.canvas {
+.graph {
     position: relative;
     margin: auto;
     width: 400px;
     height: 400px;
-    color: #D3F2F6;
+    color: #08fabc;
     outline: 15px solid rgba(117, 114, 114, 0.2);
     background: rgba(43, 43, 45, 0.38);
     border-radius: 5px;
@@ -184,12 +181,12 @@ select.r {
 
 }
 
-.canvas:hover {
+.graph:hover {
     cursor: url("https://cdn.custom-cursor.com/db/13504/32/comics-and-books-captain-underpants-cursor.png") 4 0, auto;
 }
 
-.canvas_column {
-    padding: 120px;
+.canvas {
+    padding: 60px;
     background: rgba(7, 7, 7, 0.5);
 }
 
@@ -205,35 +202,43 @@ select.r {
     background: rgba(0, 0, 0, 0.47);
 }
 
-table {
-    border-spacing: 4px 8px;
-}
+/*.table_th, .table_td{*/
+/*    position: relative;*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(5, auto);*/
+/*}*/
+
+/*.simple_th{*/
+/*}*/
 
 .table {
-    border-spacing: 2px 2px;
+    border-spacing: 4px 6px;
     background: rgba(0, 0, 0, 0.65);
     caption-side: bottom;
     text-align: right;
-    padding: 20px 30px;
     letter-spacing: 1px;
-    font-size: 15px;
+    font-size: 18px;
     position: relative;
 }
 
 .table td {
     background: rgba(203, 158, 246, 0.98);
     border-radius: 3px;
+    height: 30px;
+    text-shadow: 0 0.3px 0.3px #2D2020;
+    padding: 2px 20px 2px 20px;
 }
 
 .table th {
     background: rgba(255, 251, 160, 0.98);
-    border-radius: 8px;
+    border-radius: 4px;
     text-shadow: 0 1px 1px #2D2020;
-    padding: 0 18px;
+
     text-align: center;
     color: #0c0c0c;
     font-size: 19px;
     letter-spacing: 2px;
     position: center;
     margin: 5px;
+    height: 0px;
 }
