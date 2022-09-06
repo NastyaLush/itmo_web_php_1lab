@@ -44,7 +44,7 @@ html {
     display: grid;
     grid-area: table;
     overflow-y:auto;
-    height: 120vh;
+    height: 100%;
     width: auto;
 }
 .labels {
