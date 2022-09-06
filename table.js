@@ -1,6 +1,6 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
 import {getAnalytics} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
-import {getDatabase, ref, onChildAdded} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
+import {getDatabase, ref, onChildAdded, onValue} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAk-ZpXDqAJyRHrgnlx9mTFZxeZcu00j3Q",
@@ -16,8 +16,9 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase();
 const reference = ref(database, 'data/');
 
-onChildAdded(reference, (childSnapshot, prevChildKey) =>{
-add_to_the_table(childSnapshot.val());
+
+onChildAdded(reference, (childSnapshot, prevChildKey) => {
+    add_to_the_table(childSnapshot.val());
 });
 
 function add_to_the_table(data) {
@@ -28,16 +29,21 @@ function add_to_the_table(data) {
     var result = data.Result;
     var dateTime = data.Date.toLocaleString();
 
-    let row = "";
-    row += "<td>" + x
-        + "</td><td>" + y
-        + "</td><td>" + r
-        + "</td><td>" + result
-        + "</td><td>" + dateTime
-        + "</td>";
-    var tbody = document.querySelector("#table tbody");
-    var tr = document.createElement("tr");
+    let row = "<div  class='cell'>" + x + "</div>"
+        + "<div class='cell'>" + y + "</div>"
+        + "<div class='cell'>" + r + "</div>"
+        + "<div class='cell'>" + result + "</div>"
+        +"<div class='cell'>" + dateTime + "</div>";
+    var table = document.getElementById("head_table");
 
-    tr.innerHTML = row;
-    tbody.appendChild(tr)
+    function insertAfter(referenceNode, newNode) {
+        referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    }
+
+    var el = document.createElement("div");
+    el.classList.add('row');
+    el. classList.add('new');
+    el.innerHTML = row;
+    insertAfter(table, el);
+    return el;
 }

@@ -21,19 +21,39 @@ html {
     grid-area: header;
     justify-items: stretch;
 }
-.table{
+
+.scroll::-webkit-scrollbar {
+    width: 20px;
+}
+
+.scroll::-webkit-scrollbar-track {
+    background-color: rgba(253, 253, 253, 0.78);
+    border-radius: 100px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 80px;
+    border: 6px ;
+    border-left: 40px;
+    border-right: 4px;
+    background-color: rgba(231, 166, 159, 0.93);
+}
+.scroll{
     display: grid;
     grid-area: table;
-    place-self: stretch;
+    overflow-y:auto;
+    height: 100vh;
 }
-.labels{
+.labels {
     display: grid;
     grid-area: label;
 }
-.canvas{
+
+.canvas {
     display: grid;
     grid-area: graphic;
 }
+
 .content {
     display: grid;
     justify-content: stretch;
@@ -108,12 +128,15 @@ html {
     margin: 8px 6px;
     letter-spacing: 2px;
 }
-.no-warning{
+
+.no-warning {
     background: none;
 }
-.checkbox{
+
+.checkbox {
     padding: 7px;
 }
+
 .y {
     display: grid;
     grid-template-rows:50px;
@@ -121,9 +144,11 @@ html {
     color: #e1e2ff;
     background: rgba(0, 0, 0, 0);
 }
-.r_group{
+
+.r_group {
     padding: 0 0 0 7px;
 }
+
 .menu label:before {
     border-radius: 3px;
 }
@@ -202,14 +227,7 @@ select.r {
     background: rgba(0, 0, 0, 0.47);
 }
 
-/*.table_th, .table_td{*/
-/*    position: relative;*/
-/*    display: grid;*/
-/*    grid-template-columns: repeat(5, auto);*/
-/*}*/
 
-/*.simple_th{*/
-/*}*/
 
 .table {
     border-spacing: 4px 6px;
@@ -219,26 +237,52 @@ select.r {
     letter-spacing: 1px;
     font-size: 18px;
     position: relative;
+    width: border-box;
 }
-
-.table td {
-    background: rgba(203, 158, 246, 0.98);
-    border-radius: 3px;
-    height: 30px;
-    text-shadow: 0 0.3px 0.3px #2D2020;
-    padding: 2px 20px 2px 20px;
-}
-
-.table th {
+#head_table .cell {
     background: rgba(255, 251, 160, 0.98);
     border-radius: 4px;
     text-shadow: 0 1px 1px #2D2020;
-
     text-align: center;
     color: #0c0c0c;
     font-size: 19px;
     letter-spacing: 2px;
     position: center;
     margin: 5px;
-    height: 0px;
+    height: 40px;
+}
+.cell {
+    display: table-cell;
+    padding: 2px 20px 2px 20px;
+    width: auto;
+    border-radius: 3px;
+    background: rgba(203, 158, 246, 0.98);
+    text-shadow: 0 0.3px 0.3px #2D2020;
+}
+
+
+.table {
+    display: table;
+    overflow-y:scroll;
+}
+
+.row {
+    display: table-row;
+    width: auto;
+    animation: nani 3.5s forwards;
+}
+@keyframes ani {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+    0% {height: 5px;}
+    100% {height: 30px;}
+    0% {font-size: 0;}
+    100% {font-size: medium;}
+}@keyframes nani {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.new{
+    animation: ani 2.5s forwards;
 }
