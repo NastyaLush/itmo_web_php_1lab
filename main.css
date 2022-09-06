@@ -20,7 +20,9 @@ html {
     background: rgba(0, 0, 0, 0.85);
     grid-area: header;
     justify-items: stretch;
+
 }
+
 
 .scroll::-webkit-scrollbar {
     width: 20px;
@@ -42,7 +44,8 @@ html {
     display: grid;
     grid-area: table;
     overflow-y:auto;
-    height: 100vh;
+    height: 120vh;
+    width: auto;
 }
 .labels {
     display: grid;
@@ -57,10 +60,11 @@ html {
 .content {
     display: grid;
     justify-content: stretch;
+    grid-template-columns: 1.5fr 2fr;
     grid-template-areas:
     "header header"
     "graphic table"
-    "label table"
+    "label  table"
 }
 
 
@@ -120,13 +124,14 @@ html {
 
 .error, .menu, .y {
     color: #f34848;
-    font-weight: 800;
+    font-weight: normal;
     font-family: 'Shadows Into Light', sans-serif;
     text-shadow: 0 1px 2px #000;
     background: rgba(0, 0, 0, 0.47);
     border-radius: 6px;
     margin: 8px 6px;
     letter-spacing: 2px;
+    width: 400px;
 }
 
 .no-warning {
@@ -138,7 +143,7 @@ html {
 }
 
 .y {
-    display: grid;
+
     grid-template-rows:50px;
     grid-template-columns: 110px 400px 300px;
     color: #e1e2ff;
@@ -211,12 +216,11 @@ select.r {
 }
 
 .canvas {
-    padding: 60px;
+    padding: 50px;
     background: rgba(7, 7, 7, 0.5);
 }
 
 .x {
-    display: grid;
     padding: 10px 0 5px 5px;
     top: 250px;
     grid-template-columns: 1.3fr 2fr 3fr;
