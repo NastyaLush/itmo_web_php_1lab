@@ -10,75 +10,73 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 <body>
-    <div class="content">
-        <div class="head">
-            <div class="circle"></div>
-            <div class="circle b" id="circle b"></div>
-            <h2 class="name" id="name">
-                <div class="full_name">Lushnikova Anastasia</div>
-                <div class="attributes" id="attributes">Group: P32302 Option:3209</div>
-            </h2>
+<div class="content">
+    <div class="head">
+        <div class="circle"></div>
+        <div class="circle b" id="circle b"></div>
+        <h2 class="name" id="name">
+            <div class="full_name">Lushnikova Anastasia</div>
+            <div class="attributes" id="attributes">Group: P32302 Option:3209</div>
+        </h2>
+    </div>
+    <div class="canvas">
+        <canvas class="graph" id="canvas" width="300" height="300"></canvas>
+    </div>
+
+    <form class="labels" method="get">
+        <div class="x">
+
+            <label for="x" class="menu">Change X:</label>
+            <input class="warning" type="text" name="x" id="x" placeholder="0">
+
+            <div id="log_x" class="error">&nbsp You should write x between -3 and 3 &nbsp</div>
         </div>
-        <div class="canvas">
-            <canvas class="graph" id="canvas" width="300" height="300"></canvas>
+        <div class="y" id="y">
+            <label for="y" class="menu">Change Y:</label>
+            <div class="checkbox" id="checkbox">
+                <input type="checkbox" name="y" class="y_text" value="-5" id="-5">-5
+                <input type="checkbox" name="y" class="y_text" value="-4" id="-4">-4
+                <input type="checkbox" name="y" class="y_text" value="-3" id="-3">-3
+                <input type="checkbox" name="y" class="y_text" value="-2" id="-2">-2
+                <input type="checkbox" name="y" class="y_text" value="-1" id="-1">-1
+                <input type="checkbox" name="y" class="y_text" value="0" id="0">0
+                <input type="checkbox" name="y" class="y_text" value="1" id="1">1
+                <input type="checkbox" name="y" class="y_text" value="2" id="2">2
+                <input type="checkbox" name="y" class="y_text" value="3" id="3">3
+            </div>
+            <div id="log_y" class="error"> &nbsp You should choose one y &nbsp</div>
         </div>
-
-        <form class="labels" method="get">
-            <div class="x">
-
-                <label for="x" class="menu">Change X:</label>
-                <input class="warning" type="text" name="x" id="x" placeholder="0">
-
-                <div id="log_x" class="error">&nbsp You should write x between -3 and 3 &nbsp</div>
-            </div>
-            <div class="y" id="y">
-                <label for="y" class="menu">Change Y:</label>
-                <div class="checkbox" id="checkbox">
-                    <input type="checkbox" name="y" class="y_text" value="-5" id="-5">-5
-                    <input type="checkbox" name="y" class="y_text" value="-4" id="-4">-4
-                    <input type="checkbox" name="y" class="y_text" value="-3" id="-3">-3
-                    <input type="checkbox" name="y" class="y_text" value="-2" id="-2">-2
-                    <input type="checkbox" name="y" class="y_text" value="-1" id="-1">-1
-                    <input type="checkbox" name="y" class="y_text" value="0" id="0">0
-                    <input type="checkbox" name="y" class="y_text" value="1" id="1">1
-                    <input type="checkbox" name="y" class="y_text" value="2" id="2">2
-                    <input type="checkbox" name="y" class="y_text" value="3" id="3">3
-                </div>
-                <div id="log_y" class="error"> &nbsp You should choose one y &nbsp</div>
-            </div>
-            <div class="r_group">
-                <label class="menu">Change R:</label>
-                <select id="r" class="r" name="r">
-                    <option value="1">1</option>
-                    <option value="1.5">1.5</option>
-                    <option value="2">2</option>
-                    <option value="2.5">2.5</option>
-                    <option value="3">3</option>
-                </select>
-            </div>
-            <button type="submit" class="no-active" id="send">send</button>
-        </form>
- <div class="scroll">
-        <div class="table" name="table" id="table">
+        <div class="r_group">
+            <label class="menu">Change R:</label>
+            <select id="r" class="r" name="r">
+                <option value="1">1</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2</option>
+                <option value="2.5">2.5</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <button type="submit" class="no-active" id="send" disabled="true">send</button>
+    </form>
+    <div class="scroll">
+        <div class="table" id="table">
             <div class="row" id="head_table">
-                <div class="cell" >X</div>
+                <div class="cell">X</div>
                 <div class="cell">Y</div>
                 <div class="cell">R</div>
                 <div class="cell">Result</div>
                 <div class="cell">The Date</div>
             </div>
             <br>
-            </div>
-    </div>
-    </div>
-        <div>
-            <script src="validation.js"></script>
-            <script src="canvas.js" type=""></script>
-            <script src="table.js" type="module"></script>
         </div>
-
-
     </div>
+</div>
+<div>
+    <script src="validation.js"></script>
+    <script src="canvas.js" type=""></script>
+    <script src="table.js" type="module"></script>
+</div>
+
 <script type="module" src="firebase.js"></script>
 </body>
 

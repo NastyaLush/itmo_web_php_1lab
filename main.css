@@ -35,18 +35,20 @@ html {
 
 .scroll::-webkit-scrollbar-thumb {
     border-radius: 80px;
-    border: 6px ;
+    border: 6px;
     border-left: 40px;
     border-right: 4px;
     background-color: rgba(231, 166, 159, 0.93);
 }
-.scroll{
+
+.scroll {
     display: grid;
     grid-area: table;
-    overflow-y:auto;
+    overflow-y: auto;
     height: 140vh;
     width: auto;
 }
+
 .labels {
     display: grid;
     grid-area: label;
@@ -103,6 +105,10 @@ html {
     text-transform: uppercase;
     letter-spacing: 2px;
     border-radius: 4px;
+}
+
+.warning:hover, .normal:hover, .checkbox:hover, .r:hover {
+    box-shadow: 0 0 12px rgba(246, 245, 248, 0.43);
 }
 
 .warning {
@@ -189,6 +195,7 @@ select.r {
 }
 
 .active:hover {
+    box-shadow: 0 0 12px #f2f1f5;
     background: #595656;
 }
 
@@ -232,7 +239,6 @@ select.r {
 }
 
 
-
 .table {
     border-spacing: 4px 6px;
     background: rgba(0, 0, 0, 0.65);
@@ -243,6 +249,7 @@ select.r {
     position: relative;
     width: border-box;
 }
+
 #head_table .cell {
     background: rgba(255, 251, 160, 0.98);
     border-radius: 4px;
@@ -255,6 +262,7 @@ select.r {
     margin: 5px;
     height: 40px;
 }
+
 .cell {
     display: table-cell;
     padding: 2px 20px 2px 20px;
@@ -267,7 +275,7 @@ select.r {
 
 .table {
     display: table;
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
 
 .row {
@@ -275,18 +283,37 @@ select.r {
     width: auto;
     animation: nani 3.5s forwards;
 }
+
 @keyframes ani {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-    0% {height: 5px;}
-    100% {height: 30px;}
-    0% {font-size: 0;}
-    100% {font-size: medium;}
-}@keyframes nani {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    0% {
+        height: 5px;
+    }
+    100% {
+        height: 30px;
+    }
+    0% {
+        font-size: 0;
+    }
+    100% {
+        font-size: medium;
+    }
 }
 
-.new{
+@keyframes nani {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.new {
     animation: ani 2.5s forwards;
 }

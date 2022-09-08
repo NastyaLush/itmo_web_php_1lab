@@ -12,16 +12,18 @@ const firebaseConfig = {
     appId: "1:183108193066:web:9eb7ad5ee711e7026eac53",
     measurementId: "G-WTEGRM4YC8"
 };
+
 const app = initializeApp(firebaseConfig);
 const database = getDatabase();
 const reference = ref(database, 'data/');
 
 
 onChildAdded(reference, (childSnapshot, prevChildKey) => {
-    add_to_the_table(childSnapshot.val());
+    AddToTheTAble(childSnapshot.val());
 });
 
-function add_to_the_table(data) {
+
+function AddToTheTAble(data) {
     let formatter = new Intl.DateTimeFormat('nl-BE');
     let x = data.X;
     var y = data.Y;
@@ -33,17 +35,17 @@ function add_to_the_table(data) {
         + "<div class='cell'>" + y + "</div>"
         + "<div class='cell'>" + r + "</div>"
         + "<div class='cell'>" + result + "</div>"
-        +"<div class='cell'>" + dateTime + "</div>";
+        + "<div class='cell'>" + dateTime + "</div>";
     var table = document.getElementById("head_table");
+
+    var el = document.createElement("div");
+    el.classList.add('row');
+    el.classList.add('new');
+    el.innerHTML = row;
+    insertAfter(table, el);
+    return el;
 
     function insertAfter(referenceNode, newNode) {
         referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
     }
-
-    var el = document.createElement("div");
-    el.classList.add('row');
-    el. classList.add('new');
-    el.innerHTML = row;
-    insertAfter(table, el);
-    return el;
 }
