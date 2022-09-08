@@ -1,4 +1,4 @@
-# lab_web_1
+# [lab_web_1](https://nastyalush.github.io/lab_web/)
 Changes:
 - сайт не использует ~php-скрипт~ вместо него: `Firebase realtime databese`
 - вместо табличной верстки `grid`
