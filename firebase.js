@@ -3,16 +3,8 @@ import {getAnalytics} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-an
 import {getDatabase, ref, set, push, onValue} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
 
 
-const firebaseConfig = {
-    apiKey: "AIzaSyAk-ZpXDqAJyRHrgnlx9mTFZxeZcu00j3Q",
-    authDomain: "labweb-7bb86.firebaseapp.com",
-    databaseURL: "https://labweb-7bb86-default-rtdb.firebaseio.com",
-    projectId: "labweb-7bb86",
-    storageBucket: "labweb-7bb86.appspot.com",
-    messagingSenderId: "183108193066",
-    appId: "1:183108193066:web:9eb7ad5ee711e7026eac53",
-    measurementId: "G-WTEGRM4YC8"
-};
+import { firebaseConfig } from './config.js';
+initializeApp(firebaseConfig);
 
 const app = initializeApp(firebaseConfig);
 
