@@ -1,15 +1,9 @@
-import { initializeApp } from 'firebase/app';
-import {getAnalytics} from "firebase/analytics";
+import {initializeApp} from 'firebase/app';
 import {getDatabase, ref, set, push, onValue} from "firebase/database";
-import { firebaseConfig } from './config.js';
 
-export function initialisation() {
+export function initialisation(firebaseConfig) {
     initializeApp(firebaseConfig);
-
     const app = initializeApp(firebaseConfig);
-
-    const analytics = getAnalytics(app);
-
     const button = document.getElementById('send');
     button.addEventListener('click', (e) => {
         const time = new Date().toUTCString();

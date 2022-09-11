@@ -1,11 +1,7 @@
 import {initializeApp} from "firebase/app";
 import {getDatabase, ref, onChildAdded} from "firebase/database";
-import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 
-
-import { firebaseConfig } from './config.js';
-
-export function createTable() {
+export function createTable(firebaseConfig) {
     initializeApp(firebaseConfig);
     const database = getDatabase();
     const reference = ref(database, 'data/');
