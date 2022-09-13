@@ -1,10 +1,10 @@
 import {initializeApp} from "firebase/app";
 import {getDatabase, ref, onChildAdded} from "firebase/database";
-
+import * as constants from "./utilConstants";
 export function createTable(firebaseConfig) {
     initializeApp(firebaseConfig);
     const database = getDatabase();
-    const reference = ref(database, 'data/');
+    const reference = ref(database);
 
     onChildAdded(reference, (childSnapshot) => {
         AddToTheTAble(childSnapshot.val());
@@ -22,11 +22,11 @@ export function createTable(firebaseConfig) {
             + "<div class='cell'>" + r + "</div>"
             + "<div class='cell'>" + result + "</div>"
             + "<div class='cell'>" + dateTime + "</div>";
-        const table = document.getElementById("head_table");
+        const table = document.getElementById(constants.headTable);
 
-        const el = document.createElement("div");
-        el.classList.add('row');
-        el.classList.add('new');
+        const el = document.createElement(constants.div);
+        el.classList.add(constants.row);
+        el.classList.add(constants.classNew);
         el.innerHTML = row;
         insertAfter(table, el);
         return el;
