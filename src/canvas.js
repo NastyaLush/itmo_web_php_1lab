@@ -1,6 +1,6 @@
 "use strict";
 export function drawGraph() {
-    let drawingCanvas = document.getElementById('canvas');
+    const drawingCanvas = document.getElementById('canvas');
     if (drawingCanvas && drawingCanvas.getContext) {
         let context = drawingCanvas.getContext('2d');
 
