@@ -77,7 +77,7 @@ function getCursorPosition(canvas, event) {
     const rect = canvas.getBoundingClientRect()
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
-    let r = document.querySelector('#r').selectedOptions[0].text;
+    const r = document.querySelector('#r').selectedOptions[0].text;
     x = getX(x, r);
     y = createY(getY(y, r), r, x);
     document.getElementById('x').value = x;
