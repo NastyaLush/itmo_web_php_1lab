@@ -2,7 +2,7 @@
 export function drawGraph() {
     const drawingCanvas = document.getElementById('canvas');
     if (drawingCanvas && drawingCanvas.getContext) {
-        let context = drawingCanvas.getContext('2d');
+        const context = drawingCanvas.getContext('2d');
 
         context.fillStyle = "rgba(147,127,196,0.67)";
         context.beginPath();
