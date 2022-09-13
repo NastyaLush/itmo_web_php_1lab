@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c6b7f0f-9148-478f-a51a-4dec0dffa7e2" name="Changes" comment="let changed to const">
-      <change afterPath="$PROJECT_DIR$/src/utilConstants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilStyles.js" afterDir="false" />
+    <list default="true" id="2c6b7f0f-9148-478f-a51a-4dec0dffa7e2" name="Changes" comment="const outside">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/validation.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +25,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.env" root0="FORCE_HIGHLIGHTING" />
@@ -116,7 +110,7 @@
       <workItem from="1662728293218" duration="6885000" />
       <workItem from="1662808267981" duration="10034000" />
       <workItem from="1662983076504" duration="949000" />
-      <workItem from="1663081702921" duration="4776000" />
+      <workItem from="1663081702921" duration="6313000" />
     </task>
     <task id="LOCAL-00001" summary="dark version">
       <created>1660822482968</created>
@@ -328,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663082696092</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="const outside">
+      <created>1663086780280</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1663086780280</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,7 +370,8 @@
     <MESSAGE value="env" />
     <MESSAGE value="issue" />
     <MESSAGE value="let changed to const" />
-    <option name="LAST_COMMIT_MESSAGE" value="let changed to const" />
+    <MESSAGE value="const outside" />
+    <option name="LAST_COMMIT_MESSAGE" value="const outside" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
