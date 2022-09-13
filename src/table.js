@@ -11,21 +11,20 @@ export function createTable(firebaseConfig) {
     });
 
     function AddToTheTAble(data) {
-        let formatter = new Intl.DateTimeFormat('nl-BE');
-        let x = data.X;
-        let y = data.Y;
-        let r = data.R;
-        let result = data.Result;
-        let dateTime = data.Date.toLocaleString();
+        const x = data.X;
+        const y = data.Y;
+        const r = data.R;
+        const result = data.Result;
+        const dateTime = data.Date.toLocaleString();
 
-        let row = "<div  class='cell'>" + x + "</div>"
+        const row = "<div  class='cell'>" + x + "</div>"
             + "<div class='cell'>" + y + "</div>"
             + "<div class='cell'>" + r + "</div>"
             + "<div class='cell'>" + result + "</div>"
             + "<div class='cell'>" + dateTime + "</div>";
-        let table = document.getElementById("head_table");
+        const table = document.getElementById("head_table");
 
-        let el = document.createElement("div");
+        const el = document.createElement("div");
         el.classList.add('row');
         el.classList.add('new');
         el.innerHTML = row;

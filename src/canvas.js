@@ -83,7 +83,7 @@ function getCursorPosition(canvas, event) {
     document.getElementById('x').value = x;
     document.getElementById('x').dispatchEvent(new Event('change'));
 
-    let checkbox = document.getElementsByName('y');
+    const checkbox = document.getElementsByName('y');
     for (let i = 0; i < checkbox.length; i++) {
         checkbox[i].checked = false;
     }

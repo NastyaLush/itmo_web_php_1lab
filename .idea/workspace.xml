@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c6b7f0f-9148-478f-a51a-4dec0dffa7e2" name="Changes" comment="env">
+    <list default="true" id="2c6b7f0f-9148-478f-a51a-4dec0dffa7e2" name="Changes" comment="issue">
       <change beforePath="$PROJECT_DIR$/src/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/table.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +111,7 @@
       <workItem from="1662728293218" duration="6885000" />
       <workItem from="1662808267981" duration="10034000" />
       <workItem from="1662983076504" duration="949000" />
-      <workItem from="1663081702921" duration="460000" />
+      <workItem from="1663081702921" duration="801000" />
     </task>
     <task id="LOCAL-00001" summary="dark version">
       <created>1660822482968</created>
@@ -307,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663081848153</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="issue">
+      <created>1663082170215</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1663082170215</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +355,8 @@
     <MESSAGE value="fixed error and style mistake" />
     <MESSAGE value="webpack" />
     <MESSAGE value="env" />
-    <option name="LAST_COMMIT_MESSAGE" value="env" />
+    <MESSAGE value="issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="issue" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
