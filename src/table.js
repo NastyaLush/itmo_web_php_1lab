@@ -18,11 +18,11 @@ export function createTable (firebaseConfig) {
     const result = data.Result
     const dateTime = data.Date
 
-    const row = "<div  class='cell'>" + x + '</div>' +
-            "<div class='cell'>" + y + '</div>' +
-            "<div class='cell'>" + r + '</div>' +
-            "<div class='cell'>" + result + '</div>' +
-            "<div class='cell'>" + dateTime + '</div>'
+    const row = "<div  class='content__scroll_table_row_cell'>" + x + '</div>' +
+            "<div class='content__scroll_table_row_cell'>" + y + '</div>' +
+            "<div class='content__scroll_table_row_cell'>" + r + '</div>' +
+            "<div class='content__scroll_table_row_cell'>" + result + '</div>' +
+            "<div class='content__scroll_table_row_cell'>" + dateTime + '</div>'
     const table = document.getElementById(getKey('headTable', 'constant'))
 
     const el = document.createElement(getKey('div', 'constant'))

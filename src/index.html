@@ -12,28 +12,27 @@
 <body>
 <div class="content">
     <div class="head">
-        <div class="circle"></div>
-        <div class="circle b" id="circle b"></div>
-        <h2 class="name" id="name">
-            <div class="full_name">Lushnikova Anastasia</div>
-            <div class="attributes" id="attributes">Group: P32302 Option:3209</div>
+        <div class="content__head_circle"></div>
+        <h2 class="content__head_headline">
+            <div class="content__head_headline_name">Lushnikova Anastasia</div>
+            <div class="content__head_headline_attributes" id="attributes">Group: P32302 Option:3209</div>
         </h2>
     </div>
-    <div class="canvas">
-        <canvas class="graph" id="canvas" width="300" height="300"></canvas>
+    <div class="content__canvas">
+        <canvas class="content__canvas_graph" id="canvas" width="300" height="300"></canvas>
     </div>
 
-    <form class="labels" method="get">
-        <div class="x">
+    <form class="content__labels" >
+        <div class="content__labels_x">
 
-            <label for="x" class="menu">Change X:</label>
-            <input class="warning" type="text" name="x" id="x" placeholder="0">
+            <label for="x" class="content__labels_x_menu">Change X:</label>
+            <input class="content__labels_x_warning" type="text" name="x" id="x" placeholder="0">
+            <div id="log_x" class="content__labels_error">&nbsp You should write x between -3 and 3 &nbsp</div>
 
-            <div id="log_x" class="error">&nbsp You should write x between -3 and 3 &nbsp</div>
         </div>
-        <div class="y" id="y">
-            <label for="y" class="menu">Change Y:</label>
-            <div class="checkbox" id="checkbox">
+        <div class="content__labels_y" id="y">
+            <label for="y" class="content__labels_y_menu">Change Y:</label>
+            <div class="content__labels_y_checkbox" id="checkbox">
                 <input type="checkbox" name="y" class="y_text" value="-5" id="-5">-5
                 <input type="checkbox" name="y" class="y_text" value="-4" id="-4">-4
                 <input type="checkbox" name="y" class="y_text" value="-3" id="-3">-3
@@ -44,11 +43,11 @@
                 <input type="checkbox" name="y" class="y_text" value="2" id="2">2
                 <input type="checkbox" name="y" class="y_text" value="3" id="3">3
             </div>
-            <div id="log_y" class="error"> &nbsp You should choose one y &nbsp</div>
+            <div id="log_y" class="content__labels_error"> &nbsp You should choose one y &nbsp</div>
         </div>
-        <div class="r_group">
-            <label class="menu">Change R:</label>
-            <select id="r" class="r" name="r">
+        <div class="content__labels_r-group">
+            <label class="content__labels_r-group_menu">Change R:</label>
+            <select id="r" class="content__labels_r-group_r" name="r">
                 <option value="1">1</option>
                 <option value="1.5">1.5</option>
                 <option value="2">2</option>
@@ -56,16 +55,16 @@
                 <option value="3">3</option>
             </select>
         </div>
-        <button type="submit" class="no-active" id="send" disabled="true">send</button>
+        <button type="submit" class="content__labels_no-active" id="send" disabled="true">send</button>
     </form>
-    <div class="scroll">
-        <div class="table" id="table">
-            <div class="row" id="head_table">
-                <div class="cell">X</div>
-                <div class="cell">Y</div>
-                <div class="cell">R</div>
-                <div class="cell">Result</div>
-                <div class="cell">The Date</div>
+    <div class="content__scroll">
+        <div class="content__scroll_table" id="table">
+            <div class="content__scroll_table_row" id="head_table">
+                <div class="content__scroll_table_row_cell">X</div>
+                <div class="content__scroll_table_row_cell">Y</div>
+                <div class="content__scroll_table_row_cell">R</div>
+                <div class="content__scroll_table_row_cell">Result</div>
+                <div class="content__scroll_table_row_cell">The Date</div>
             </div>
             <br>
         </div>
