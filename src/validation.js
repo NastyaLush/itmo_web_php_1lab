@@ -1,5 +1,5 @@
 'use strict'
-import getKey from './utilStyles'
+import getKey from './utili18'
 
 const label = document.getElementById(getKey('x', 'constant'))
 const send = document.getElementById(getKey('send', 'constant'))

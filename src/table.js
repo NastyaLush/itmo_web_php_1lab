@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getDatabase, ref, onChildAdded } from 'firebase/database'
-import getKey from './utilStyles'
+import getKey from './utili18'
 
 export function createTable (firebaseConfig) {
   initializeApp(firebaseConfig)

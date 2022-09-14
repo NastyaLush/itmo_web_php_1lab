@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getDatabase, ref, set, push, onValue } from 'firebase/database'
-import getKey from './utilStyles.js'
+import getKey from './utili18.js'
 
 export function initialisation (firebaseConfig) {
   initializeApp(firebaseConfig);
