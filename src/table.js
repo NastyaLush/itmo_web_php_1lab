@@ -1,17 +1,15 @@
-import { initializeApp } from 'firebase/app'
-import { getDatabase, ref, onChildAdded } from 'firebase/database'
+import { onChildAdded } from 'firebase/database'
 import getKey from './utili18'
+import InitialisationForAddData from './firebase'
 
 export function createTable (firebaseConfig) {
-  initializeApp(firebaseConfig)
-  const database = getDatabase()
-  const reference = ref(database)
+  const reference = new InitialisationForAddData(firebaseConfig).reference
 
   onChildAdded(reference, (childSnapshot) => {
-    AddToTheTAble(childSnapshot.val())
+    addToTheTAble(childSnapshot.val())
   })
 
-  function AddToTheTAble (data) {
+  function addToTheTAble (data) {
     const x = data.X
     const y = data.Y
     const r = data.R
