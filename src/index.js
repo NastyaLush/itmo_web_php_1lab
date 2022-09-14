@@ -1,7 +1,7 @@
-import { drawGraph } from './canvas.js'
-import { initialisation } from './firebase.js'
-import { createTable } from './table.js'
-import { validation } from './validation.js'
+import { drawGraph } from './style/canvas.js'
+import { initialisation } from './connection/firebase.js'
+import { createTable } from './main/table.js'
+import { validation } from './util/validation.js'
 
 const firebaseConfig = {
   apiKey: process.env.apiKey,

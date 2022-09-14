@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app'
 import { getDatabase, ref, set, push, onValue } from 'firebase/database'
-import getKey from './utili18.js'
-import { ValidationFromLabels } from './validation'
+import getKey from '../util/utili18.js'
+import { ValidationFromLabels } from '../util/validation'
 
 export function initialisation (firebaseConfig) {
   initializeApp(firebaseConfig)

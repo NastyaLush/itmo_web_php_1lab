@@ -1,6 +1,6 @@
 import { onChildAdded } from 'firebase/database'
-import getKey from './utili18'
-import InitialisationForAddData from './firebase'
+import getKey from '../util/utili18'
+import InitialisationForAddData from '../connection/firebase'
 
 export function createTable (firebaseConfig) {
   const reference = new InitialisationForAddData(firebaseConfig).reference
