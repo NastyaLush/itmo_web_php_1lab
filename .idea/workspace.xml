@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c6b7f0f-9148-478f-a51a-4dec0dffa7e2" name="Changes" comment="change logic">
+    <list default="true" id="2c6b7f0f-9148-478f-a51a-4dec0dffa7e2" name="Changes" comment="cs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/connection/firebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utili18.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/utili18.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/connection/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/connection/firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/validation.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,6 +114,7 @@
       <workItem from="1662728247738" duration="30000" />
       <workItem from="1662728293218" duration="6885000" />
       <workItem from="1662808267981" duration="10034000" />
+      <workItem from="1663219634830" duration="7967000" />
     </task>
     <task id="LOCAL-00001" summary="dark version">
       <created>1660822482968</created>
@@ -338,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663165083400</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="cs">
+      <created>1663168208795</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1663168208796</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,15 +381,15 @@
     <MESSAGE value="i18next" />
     <MESSAGE value="бэм" />
     <MESSAGE value="change logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="change logic" />
+    <MESSAGE value="cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="cs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/util/validation.js</url>
-          <line>135</line>
-          <properties lambdaOrdinal="-1" />
+          <line>107</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

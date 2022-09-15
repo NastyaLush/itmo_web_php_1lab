@@ -1,5 +1,6 @@
 'use strict'
 import getKey from './utili18'
+import { addData } from '../connection/firebase'
 
 class ClassManager {
   #correct
@@ -93,11 +94,63 @@ export class ValidationFromLabels {
   constructor () {
     this.time = new Date().toUTCString()
     this.x = parseFloat(document.getElementById(getKey('x', 'constant')).value).toLocaleString(3)
-    this.r = document.getElementById(getKey('r', 'constant')).value
     this.y = document.querySelector('.y_text:checked').value
-    this.result = this.getResult(this.x, this.y, this.r)
+    this.r = document.getElementById(getKey('r', 'constant')).value
+    this.result = new Result(this.x, this.y, this.r).result
   }
 
+
+  backToFirstCondition (button) {
+    const logX = document.getElementById(getKey('logX', 'constant'))
+    const logY = document.getElementById(getKey('logY', 'constant'))
+
+    document.getElementById(getKey('x', 'constant')).value = getKey('simpleString', 'constant')
+    changeClass(document.getElementById(getKey('x', 'constant')), getKey('normal', 'constant'), getKey('warning', 'constant'))
+
+    changeClass(logX, getKey('noError', 'constant'), getKey('error', 'constant'))
+    changeClass(logY, getKey('noError', 'constant'), getKey('error', 'constant'))
+
+    logX.textContent = getKey('errorX', 'constant')
+    logY.textContent = getKey('errorY', 'constant')
+    changeClass(button, getKey('active', 'constant'), getKey('noActive', 'constant'))
+    button.disabled = true
+
+    const checkbox = document.getElementsByName(getKey('y', 'constant'))
+    for (let i = 0; i < checkbox.length; i++) {
+      checkbox[i].checked = false
+    }
+  }
+}
+
+export class ValidationFromGraph {
+  constructor (canvas, event) {
+    this.time = new Date().toUTCString()
+    const rect = canvas.getBoundingClientRect()
+    let x = event.clientX - rect.left
+    let y = event.clientY - rect.top
+    this.r = document.getElementById(getKey('r', 'constant')).value
+    this.x = this.getX(x, this.r)
+    this.y = this.getY(y, this.r);
+    const res = new Result(this.x, this.y, this.r);
+    this.result = res.result
+    addData(this);
+
+  }
+
+  getX (x, r) {
+    return( r / 130 * (x - 200)).toLocaleString(3);
+  }
+
+  getY (y, r) {
+    return (r / 130 * (200 - y)).toLocaleString(3);
+  }
+
+}
+class Result{
+  result;
+  constructor (x,y,r) {
+    this.result = this.getResult(x,y,r);
+  }
   between (arg, downArg, highArg) {
     return arg >= downArg && arg <= highArg
   }
@@ -126,71 +179,5 @@ export class ValidationFromLabels {
   getResult (x, y, r) {
     if (this.isInShape(x, y, r)) return getKey('reach', 'constant')
     return getKey('miss', 'constant')
-  }
-
-  backToFirstCondition (button) {
-    const logX = document.getElementById(getKey('logX', 'constant'))
-    const logY = document.getElementById(getKey('logY', 'constant'))
-
-    document.getElementById(getKey('x', 'constant')).value = getKey('simpleString', 'constant')
-    changeClass(document.getElementById(getKey('x', 'constant')), getKey('normal', 'constant'), getKey('warning', 'constant'))
-
-    changeClass(logX, getKey('noError', 'constant'), getKey('error', 'constant'))
-    changeClass(logY, getKey('noError', 'constant'), getKey('error', 'constant'))
-
-    logX.textContent = getKey('errorX', 'constant')
-    logY.textContent = getKey('errorY', 'constant')
-    changeClass(button, getKey('active', 'constant'), getKey('noActive', 'constant'))
-    button.disabled = true
-
-    const checkbox = document.getElementsByName(getKey('y', 'constant'))
-    for (let i = 0; i < checkbox.length; i++) {
-      checkbox[i].checked = false
-    }
-  }
-}
-
-export class ValidationFromGraph {
-  constructor (canvas, event) {
-    const rect = canvas.getBoundingClientRect()
-    let x = event.clientX - rect.left
-    let y = event.clientY - rect.top
-    const r = document.querySelector('#r').selectedOptions[0].text
-    x = this.getX(x, r)
-    y = this.createY(this.getY(y, r), r, x)
-    document.getElementById(getKey('x', 'constant')).value = x
-
-    const checkbox = document.getElementsByName(getKey('y', 'constant'))
-    for (let i = 0; i < checkbox.length; i++) {
-      checkbox[i].checked = false
-    }
-    document.getElementById(y.toString()).checked = true
-    document.getElementById(y.toString()).dispatchEvent(new Event(getKey('change', 'constant')))
-  }
-
-  getX (x, r) {
-    const number = r / 130 * (x - 200)
-    return number > 0 ? Math.min(number, 3) : Math.max(number, -3)
-  }
-
-  getY (y, r) {
-    return r / 130 * (200 - y)
-  }
-
-  createY (y, r, x) {
-    if (x > 0 && y < 0) {
-      if (((r - x) + y) > 0) {
-        return Math.ceil(y)
-      } else {
-        return Math.ceil(y) - 1
-      }
-    }
-    if (y < 0) {
-      return Math.ceil(y) - 1
-    }
-    if (y > 0) {
-      return Math.floor(y) + 1
-    }
-    return y
   }
 }
