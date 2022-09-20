@@ -165,7 +165,7 @@ class Result{
 
   isInSector (x, y, r) {
     if (this.between(x, -r, 0)) {
-      if (this.between(y, 0, Math.sqrt(r ** 2 + x ** 2))) {
+      if (this.between(y, 0, Math.sqrt(r ** 2 - x ** 2))) {
         return true
       }
     }

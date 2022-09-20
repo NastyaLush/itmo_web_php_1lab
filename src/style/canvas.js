@@ -9,12 +9,10 @@ export function drawGraph () {
     const context = drawingCanvas.getContext('2d')
 
     context.fillStyle = getKey('shapeColor', 'style')
-    context.beginPath()
+    context.arc(150, 150, 100,Math.PI,3*Math.PI/2);
     context.moveTo(150, 50)
-    context.quadraticCurveTo(50, 50, 50, 150)
+    context.lineTo(50, 150)
     context.lineTo(150, 150)
-    context.closePath()
-    context.stroke()
     context.fill()
 
     context.beginPath()

@@ -1,17 +1,7 @@
-import { drawGraph } from './style/canvas.js'
-import { initialisation } from './connection/firebase.js'
-import { createTable } from './main/table.js'
-import { validation } from './util/validation.js'
-import { initializeApp } from 'firebase/app'
 import * as firebaseui from 'firebaseui'
 import firebase from 'firebase/compat/app'
-// import firebase from 'firebase/compat/app';
-// import * as firebaseui from 'firebaseui'
 import 'firebaseui/dist/firebaseui.css'
 import admin from 'firebase/compat/app'
-// import { getAuth } from 'firebase-admin/auth'
-
-
 
 const firebaseConfig = {
   apiKey: process.env.apiKey,
@@ -24,21 +14,13 @@ const firebaseConfig = {
   measurementId: process.env.measurementId
 }
 
-drawGraph()
-initialisation(firebaseConfig)
-createTable(firebaseConfig)
-validation()
-
-
-
-
 admin.initializeApp(firebaseConfig);
 firebase.initializeApp(firebaseConfig);
-// Get the Auth service for the default app
-var authService = firebase.auth();
+
+const authService = firebase.auth()
 const ui = new firebaseui.auth.AuthUI(firebase.auth())
 ui.start('#firebaseui-auth-container', {
-  signInSuccessUrl: '<url-to-redirect-to-on-success>',
+  signInSuccessUrl: '/lab_web/index.js',
   signInOptions: [
     firebase.auth.EmailAuthProvider.PROVIDER_ID
   ],
