@@ -1,13 +1,21 @@
-import { onChildAdded } from 'firebase/database'
+import { onChildAdded, ref } from 'firebase/database'
 import getKey from '../util/utili18'
 import InitialisationForAddData from '../connection/firebase'
 
-export function createTable (firebaseConfig) {
-  const reference = new InitialisationForAddData(firebaseConfig).reference
 
-  onChildAdded(reference, (childSnapshot) => {
-    addToTheTAble(childSnapshot.val())
-  })
+export function createTable (firebaseConfig) {
+  let data = new InitialisationForAddData(firebaseConfig);
+
+      onChildAdded(data.reference, (childSnapshot) => {
+        onChildAdded(ref(data.database, childSnapshot.key +"/"), (childSnapshot2) =>{
+          addToTheTAble(childSnapshot2.val())
+        })
+      })
+
+
+}
+
+
 
   function addToTheTAble (data) {
     const x = data.X
@@ -34,4 +42,4 @@ export function createTable (firebaseConfig) {
       referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling)
     }
   }
-}
+

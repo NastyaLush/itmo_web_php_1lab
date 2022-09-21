@@ -2,6 +2,12 @@ import { initializeApp } from 'firebase/app'
 import { getDatabase, ref, set, push, onValue } from 'firebase/database'
 import getKey from '../util/utili18.js'
 import { ValidationFromLabels } from '../util/validation.js'
+import { onAuthStateChanged } from 'firebase/auth'
+
+import firebase from 'firebase/compat/app'
+import admin from 'firebase/compat/app'
+
+let uid;
 
 export function initialisation (firebaseConfig) {
   initializeApp(firebaseConfig)
@@ -17,11 +23,22 @@ export function initialisation (firebaseConfig) {
   setTimeout(() => {
     isConnection()
   }, 8000)
-}
-export function addData(valid){
 
+  admin.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth()
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      uid = user.uid;
+    }
+  });
+}
+
+export function addData(valid){
   const database = getDatabase()
-  const reference = ref(database)
+
+  const reference = ref(database, uid)
 
   set(push(reference), {
     X: valid.x,
@@ -29,14 +46,15 @@ export function addData(valid){
     R: valid.r,
     Result: valid.result,
     Date: valid.time
-  }).then(r => {})
+  })
+
 
 }
 export default class InitialisationForAddData {
   constructor (firebaseConfig) {
     initializeApp(firebaseConfig)
-    const database = getDatabase()
-    this.reference = ref(database)
+    this.database = getDatabase();
+    this.reference = ref(this.database)
   }
 }
 
