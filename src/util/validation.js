@@ -1,6 +1,6 @@
 'use strict'
-import getKey from './utili18'
-import { addData } from '../connection/firebase'
+import getKey from './utili18.js'
+import { addData } from '../connection/firebase.js'
 
 class ClassManager {
   #correct

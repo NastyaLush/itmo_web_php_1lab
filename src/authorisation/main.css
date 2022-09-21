@@ -1,0 +1,24 @@
+html {
+    /*background: url(*/
+    /*https://kartinkin.net/uploads/posts/2021-07/thumbs/1625733496_34-kartinkin-com-p-fioletovie-oboi-minimalizm-krasivie-34.jpg) no-repeat fixed center/cover;*/
+    /*position: relative;*/
+    /*overflow-y: scroll;*/
+    background: rgb(177 91 212 / 58%);
+}
+.body__auth-container{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 30px 30px 30px;
+    border-radius: 10px;
+    width: 300px;
+    margin-top: 40px;
+    background: rgba(3, 3, 3, 0.58);
+}
+img{
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-top: 15%;
+    margin-right: auto;
+}

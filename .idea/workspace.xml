@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c6b7f0f-9148-478f-a51a-4dec0dffa7e2" name="Changes" comment="clickable graph">
-      <change afterPath="$PROJECT_DIR$/src/main/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/index1.html" afterDir="false" />
+    <list default="true" id="2c6b7f0f-9148-478f-a51a-4dec0dffa7e2" name="Changes" comment="work without github and google">
+      <change afterPath="$PROJECT_DIR$/src/authorisation/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/authorisation/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/authorisation/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/connection/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/connection/firebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/auth.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/indexx.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/table/table.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/canvas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/validation.js" afterDir="false" />
     </list>
@@ -28,6 +33,7 @@
         <option value="Class" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -44,8 +50,8 @@
     <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/firebase.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/authorisation/index.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/connection/firebase.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/index1.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/style/canvas.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/util/validation.js" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -65,7 +71,8 @@
     "WebServerToolWindowFactoryState": "false",
     "javascript.nodejs.core.library.configured.version": "16.17.0",
     "javascript.nodejs.core.library.typings.version": "16.11.58",
-    "last_opened_file_path": "C:/Users/yfcni/IdeaProjects/lab_web1",
+    "last_opened_file_path": "C:/Users/yfcni/IdeaProjects/laba1nikita",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,11 +83,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yfcni\IdeaProjects\lab_web1\src\table" />
+      <recent name="C:\Users\yfcni\IdeaProjects\lab_web1\src\authorisation" />
       <recent name="C:\Users\yfcni\IdeaProjects\lab_web1\src" />
       <recent name="C:\Users\yfcni\IdeaProjects\lab_web1\src\main" />
       <recent name="C:\Users\yfcni\IdeaProjects\lab_web1\src\util" />
-      <recent name="C:\Users\yfcni\IdeaProjects\lab_web1\src\connection" />
-      <recent name="C:\Users\yfcni\IdeaProjects\lab_web1\src\style" />
     </key>
   </component>
   <component name="RunManager">
@@ -125,7 +132,7 @@
       <workItem from="1663219634830" duration="10559000" />
       <workItem from="1663346732033" duration="779000" />
       <workItem from="1663577165284" duration="1021000" />
-      <workItem from="1663665594834" duration="16396000" />
+      <workItem from="1663665594834" duration="29445000" />
     </task>
     <task id="LOCAL-00001" summary="dark version">
       <created>1660822482968</created>
@@ -372,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663249635713</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="work a bit">
+      <created>1663690730988</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1663690730988</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +429,9 @@
     <MESSAGE value="change logic" />
     <MESSAGE value="cs" />
     <MESSAGE value="clickable graph" />
-    <option name="LAST_COMMIT_MESSAGE" value="clickable graph" />
+    <MESSAGE value="work a bit" />
+    <MESSAGE value="work without github and google" />
+    <option name="LAST_COMMIT_MESSAGE" value="work without github and google" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
