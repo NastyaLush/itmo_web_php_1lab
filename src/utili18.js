@@ -14,12 +14,12 @@ i18next.init({
       },
       constant: {
         errorX : ' You should write x between -3 and 3 ',
-        noError : 'no-warning',
-        warning : 'warning',
-        normal : 'normal',
-        error : 'error',
-        active : 'active',
-        noActive : 'no-active',
+        noError : 'content__labels_no-warning',
+        warning : 'content__labels_x_warning',
+        normal : 'content__labels_x_normal',
+        error : 'content__labels_error',
+        active : 'content__labels_active',
+        noActive : 'content__labels_no-active',
         x : 'x',
         y : 'y',
         R : 'R',
@@ -32,12 +32,13 @@ i18next.init({
         simpleString : '',
         connectionError : 'Please check your connection to the internet',
         div : 'div',
-        classNew : 'new',
-        row : 'row',
+        classNew : 'content__scroll_table_new',
+        row : 'content__scroll_table_row',
         headTable : 'head_table',
         click : 'click',
         reach : 'reach',
-        miss : 'miss'
+        miss : 'miss',
+        cell: 'content__scroll_table_row_cell'
       }
     }
   }

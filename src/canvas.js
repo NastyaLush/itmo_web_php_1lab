@@ -2,7 +2,6 @@
 import getKey from './utili18.js'
 drawGraph();
 export function drawGraph () {
-  // const drawingCanvas = "hh";
   const drawingCanvas = document.getElementById('canvas')
   if (drawingCanvas && drawingCanvas.getContext) {
     const context = drawingCanvas.getContext('2d')

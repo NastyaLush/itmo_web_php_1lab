@@ -28,7 +28,6 @@ export function validation () {
         send.disabled = true
       }
       changeClass(label, getKey('warning', 'constant'), getKey('normal', 'constant'))
-
       logX.textContent = getKey('simpleString', 'constant')
       changeClass(logX, getKey('error', 'constant'), getKey('noError', 'constant'))
     }
