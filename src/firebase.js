@@ -1,15 +1,17 @@
 import { initializeApp } from 'firebase/app'
 import { getDatabase, ref, set, push, onValue } from 'firebase/database'
-import * as constants from './utilConstants'
+import getKey from './utili18.js'
+
 export function initialisation (firebaseConfig) {
-  initializeApp(firebaseConfig)
-  const button = document.getElementById(constants.send)
-  button.addEventListener(constants.click,
+  initializeApp(firebaseConfig);
+  const app = initializeApp(firebaseConfig);
+  const button = document.getElementById(getKey('send', 'constant'))
+  button.addEventListener(getKey('click', 'constant'),
     (e) => {
       const time = new Date().toUTCString()
       e.preventDefault()
-      const x = parseFloat(document.getElementById(constants.x).value).toLocaleString(3)
-      const r = document.getElementById(constants.y).value
+      const x = parseFloat(document.getElementById(getKey('x', 'constant')).value).toLocaleString(3)
+      const r = document.getElementById(getKey('r', 'constant')).value
       const checkedValue = document.querySelector('.y_text:checked').value
       const result = getResult(x, checkedValue, r)
 
@@ -25,18 +27,18 @@ export function initialisation (firebaseConfig) {
       })
 
       // back all to the first condition
-      const logX = document.getElementById(constants.logX)
-      const logY = document.getElementById(constants.logY)
-      document.getElementById(constants.x).value = constants.withOutError
-      changeClass(document.getElementById(constants.x), constants.normal, constants.warning)
-      changeClass(logX, constants.noError, constants.error)
-      changeClass(logY, constants.noError, constants.error)
-      logX.textContent = constants.errorX
-      logY.textContent = constants.errorY
-      changeClass(constants.send, constants.active, constants.noActive)
-      constants.send.disabled = true
+      const logX = document.getElementById(getKey('logX', 'constant'))
+      const logY = document.getElementById(getKey('logY', 'constant'))
+      document.getElementById(getKey('x', 'constant')).value = getKey('simpleString', 'constant')
+      changeClass(document.getElementById(getKey('x', 'constant')),  getKey('normal', 'constant'), getKey('warning', 'constant'))
+      changeClass(logX, getKey('noError', 'constant'), getKey('error', 'constant'))
+      changeClass(logY, getKey('noError', 'constant'), getKey('error', 'constant'))
+      logX.textContent = getKey('errorX', 'constant')
+      logY.textContent = getKey('errorY', 'constant')
+      changeClass(button,  getKey('active', 'constant'), getKey('noActive', 'constant'))
+      button.disabled = true
 
-      const checkbox = document.getElementsByName(constants.y)
+      const checkbox = document.getElementsByName(getKey('y', 'constant'))
       for (let i = 0; i < checkbox.length; i++) {
         checkbox[i].checked = false
       }
@@ -52,7 +54,7 @@ function isConnection () {
   const connectedRef = ref(db, '.info/connected')
   onValue(connectedRef, (snap) => {
     if (!(snap.val() === true)) {
-      window.alert(constants.connectionError)
+      window.alert(getKey('connectionError', 'constant'))
     }
   })
 }
@@ -83,8 +85,8 @@ function isInShape (x, y, r) {
 }
 
 function getResult (x, y, r) {
-  if (isInShape(x, y, r)) return constants.reach
-  return constants.miss
+  if (isInShape(x, y, r)) return getKey('reach', 'constant')
+  return getKey('miss', 'constant')
 }
 
 function changeClass (label, oldClass, newClass) {

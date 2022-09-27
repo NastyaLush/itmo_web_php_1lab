@@ -1,12 +1,13 @@
 'use strict'
-import * as style from './utilStyles'
-import * as constants from './utilConstants'
+import getKey from './utili18.js'
+drawGraph();
 export function drawGraph () {
+  // const drawingCanvas = "hh";
   const drawingCanvas = document.getElementById('canvas')
   if (drawingCanvas && drawingCanvas.getContext) {
     const context = drawingCanvas.getContext('2d')
 
-    context.fillStyle = style.shapeColor
+    context.fillStyle = getKey('shapeColor', 'style');
     context.beginPath()
     context.moveTo(150, 50)
     context.quadraticCurveTo(50, 50, 50, 150)
@@ -41,7 +42,7 @@ export function drawGraph () {
       context.moveTo(0, y)
       context.lineTo(300, y)
     }
-    context.strokeStyle = style.lineColor
+    context.strokeStyle = getKey('lineColor', 'style')
     context.stroke()
 
     context.beginPath()
@@ -57,18 +58,19 @@ export function drawGraph () {
     context.lineTo(150, 0)
     context.lineTo(155, 5)
 
-    context.strokeStyle = style.arrowColor
+    context.strokeStyle = getKey('arrowColor', 'style')
     context.stroke()
 
-    context.fillStyle = style.literalColor
-    context.font = style.literalFont
-    context.fillText(constants.R, 248, 165)
-    context.fillText(constants.R, 48, 165)
-    context.fillText(constants.R, 148, 265)
-    context.fillText(constants.R, 148, 55)
+    context.fillStyle = getKey('literalColor', 'style')
+    context.font = getKey('literalFont', 'style')
+    context.fillText(getKey('R', 'constant'), 248, 165)
+    context.fillText(getKey('R', 'constant'), 48, 165)
+    context.fillText(getKey('R', 'constant'), 148, 265)
+    context.fillText(getKey('R', 'constant'), 148, 55)
   }
   const canvas = document.querySelector('canvas')
-  canvas.addEventListener(constants.click, function (e) {
+
+  canvas.addEventListener(getKey('click', 'constant'), function (e) {
     getCursorPosition(canvas, e)
   })
 }
@@ -80,15 +82,15 @@ function getCursorPosition (canvas, event) {
   const r = document.querySelector('#r').selectedOptions[0].text
   x = getX(x, r)
   y = createY(getY(y, r), r, x)
-  document.getElementById(constants.x).value = x
-  document.getElementById(constants.x).dispatchEvent(new Event(constants.change))
+  document.getElementById(getKey('x', 'constant')).value = x
+  document.getElementById(getKey('x', 'constant')).dispatchEvent(new Event(getKey('change', 'constant')))
 
-  const checkbox = document.getElementsByName(constants.y)
+  const checkbox = document.getElementsByName(getKey('y', 'constant'))
   for (let i = 0; i < checkbox.length; i++) {
     checkbox[i].checked = false
   }
   document.getElementById(y.toString()).checked = true
-  document.getElementById(y.toString()).dispatchEvent(new Event(constants.change))
+  document.getElementById(y.toString()).dispatchEvent(new Event(getKey('change', 'constant')))
 }
 
 function getX (x, r) {

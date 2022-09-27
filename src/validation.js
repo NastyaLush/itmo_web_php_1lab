@@ -1,36 +1,36 @@
 'use strict'
-import * as constants from './utilConstants'
+import getKey from './utili18'
 
-const label = document.getElementById(constants.x)
-const send = document.getElementById(constants.send)
-const logX = document.getElementById(constants.logX)
-const logY = document.getElementById(constants.logY)
+const label = document.getElementById(getKey('x', 'constant'))
+const send = document.getElementById(getKey('send', 'constant'))
+const logX = document.getElementById(getKey('logX', 'constant'))
+const logY = document.getElementById(getKey('logY', 'constant'))
 
 export function validation () {
-  send.classList.add(constants.noActive)
-  document.getElementById(constants.x).addEventListener(constants.change, (value) => {
+  send.classList.add(getKey('noActive', 'constant'))
+  document.getElementById(getKey('x', 'constant')).addEventListener(getKey('change', 'constant'), (value) => {
     const result = parseFloat(value.target.value)
     if (!(result >= -3 && result <= 3)) {
-      logX.textContent = constants.errorX
-      changeClass(logX, constants.noError, constants.error)
+      logX.textContent = getKey('errorX', 'constant')
+      changeClass(logX, getKey('noError', 'constant'), getKey('error', 'constant'))
 
-      label.classList.add(constants.warning)
+      label.classList.add(getKey('warning', 'constant'))
       label.focus()
 
-      changeClass(send, constants.active, constants.noActive)
+      changeClass(send, getKey('active', 'constant'), getKey('noActive', 'constant'))
       send.disabled = true
     } else {
-      if (logY.textContent === constants.withOutError) {
-        changeClass(send, constants.noActive, constants.active)
+      if (logY.textContent === getKey('simpleString', 'constant')) {
+        changeClass(send, getKey('noActive', 'constant'), getKey('active', 'constant'))
         send.disabled = false
       } else {
-        changeClass(send, constants.active, constants.noActive)
+        changeClass(send, getKey('active', 'constant'), getKey('noActive', 'constant'))
         send.disabled = true
       }
-      changeClass(label, constants.warning, constants.normal)
+      changeClass(label, getKey('warning', 'constant'), getKey('normal', 'constant'))
 
-      logX.textContent = constants.withOutError
-      changeClass(logX, constants.error, constants.noError)
+      logX.textContent = getKey('simpleString', 'constant')
+      changeClass(logX, getKey('error', 'constant'), getKey('noError', 'constant'))
     }
   })
 
@@ -38,23 +38,23 @@ export function validation () {
   let enabledY = []
 
   checkboxes.forEach(function (checkbox) {
-    checkbox.addEventListener(constants.change, function () {
+    checkbox.addEventListener(getKey('change', 'constant'), function () {
       enabledY =
                 Array.from(checkboxes)
                   .filter(i => i.checked)
                   .map(i => i.textContent)
       if (enabledY.length === 1) {
-        logY.textContent = constants.withOutError
-        changeClass(logY, constants.error, constants.noError)
+        logY.textContent = getKey('simpleString', 'constant')
+        changeClass(logY, getKey('error', 'constant'), getKey('noError', 'constant'))
 
-        changeClass(send, constants.noActive, constants.active)
+        changeClass(send, getKey('noActive', 'constant'), getKey('active', 'constant'))
         send.disabled = false
       } else {
-        changeClass(send, constants.active, constants.noActive)
+        changeClass(send, getKey('active', 'constant'), getKey('noActive', 'constant'))
         send.disabled = true
 
-        logY.textContent = constants.errorY
-        changeClass(logY, constants.noError, constants.error)
+        logY.textContent = getKey('errorY', 'constant')
+        changeClass(logY, getKey('noError', 'constant'), getKey('error', 'constant'))
       }
     })
   })
