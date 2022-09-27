@@ -1,11 +1,11 @@
 import { initializeApp } from 'firebase/app'
 import { getDatabase, ref, set, push, onValue } from 'firebase/database'
 import getKey from '../util/utili18.js'
-import { ValidationFromLabels } from '../util/validation.js'
-import { onAuthStateChanged } from 'firebase/auth'
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 import firebase from 'firebase/compat/app'
 import admin from 'firebase/compat/app'
+import { ValidationFromLabels } from '../validation/validationFromLabels'
 
 let uid;
 
@@ -26,7 +26,7 @@ export function initialisation (firebaseConfig) {
 
   admin.initializeApp(firebaseConfig);
   firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth()
+  const auth = getAuth();
 
   onAuthStateChanged(auth, (user) => {
     if (user) {

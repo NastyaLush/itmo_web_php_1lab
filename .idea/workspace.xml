@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c6b7f0f-9148-478f-a51a-4dec0dffa7e2" name="Changes" comment="work without github and google">
+    <list default="true" id="2c6b7f0f-9148-478f-a51a-4dec0dffa7e2" name="Changes" comment="fix google and security">
+      <change afterPath="$PROJECT_DIR$/src/validation/classManager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/validation/result.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/validation/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/validation/validationFromGraph.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/validation/validationFromLabels.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/authorisation/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/authorisation/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/connection/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/connection/firebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/table/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/table/table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/utili18.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/utili18.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/validation/realtimeValidation.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +31,8 @@
       <list>
         <option value="Class" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -44,7 +52,7 @@
     <setting file="file://$PROJECT_DIR$/src/authorisation/index.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/connection/firebase.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/style/canvas.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/util/validation.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/validation/realtimeValidation.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -56,29 +64,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "WebServerToolWindowFactoryState": "false",
-    "javascript.nodejs.core.library.configured.version": "16.17.0",
-    "javascript.nodejs.core.library.typings.version": "16.11.58",
-    "last_opened_file_path": "C:/Users/yfcni/IdeaProjects/laba1nikita",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.nodejs"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.17.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.11.58&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yfcni/IdeaProjects/laba1nikita&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yfcni\IdeaProjects\lab_web1\src\validation" />
       <recent name="C:\Users\yfcni\IdeaProjects\lab_web1\src\table" />
       <recent name="C:\Users\yfcni\IdeaProjects\lab_web1\src\authorisation" />
       <recent name="C:\Users\yfcni\IdeaProjects\lab_web1\src" />
       <recent name="C:\Users\yfcni\IdeaProjects\lab_web1\src\main" />
-      <recent name="C:\Users\yfcni\IdeaProjects\lab_web1\src\util" />
     </key>
   </component>
   <component name="RunManager">
@@ -123,7 +131,9 @@
       <workItem from="1663219634830" duration="10559000" />
       <workItem from="1663346732033" duration="779000" />
       <workItem from="1663577165284" duration="1021000" />
-      <workItem from="1663665594834" duration="35679000" />
+      <workItem from="1663665594834" duration="36974000" />
+      <workItem from="1664270650828" duration="5000" />
+      <workItem from="1664282477651" duration="4631000" />
     </task>
     <task id="LOCAL-00001" summary="dark version">
       <created>1660822482968</created>
@@ -384,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663759994409</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="fix google and security">
+      <created>1663766347978</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1663766347978</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +446,20 @@
     <MESSAGE value="clickable graph" />
     <MESSAGE value="work a bit" />
     <MESSAGE value="work without github and google" />
-    <option name="LAST_COMMIT_MESSAGE" value="work without github and google" />
+    <MESSAGE value="fix google and security" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix google and security" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/util/utili18.js</url>
+          <line>9</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

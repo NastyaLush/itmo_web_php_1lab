@@ -1,3 +1,4 @@
+
 import i18next from 'i18next'
 
 i18next.init({
@@ -6,7 +7,7 @@ i18next.init({
   resources: {
     web: {
       style: {
-        shapeColor: 'rgba(147,127,196,0.67)',
+        shapeColor: 'rgba(176,144,239,0.73)',
         arrowColor: 'white',
         literalFont: 'bold 12px sans-serif',
         lineColor: 'rgba(218,209,209,0.34)',

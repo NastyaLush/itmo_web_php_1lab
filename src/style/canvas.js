@@ -1,7 +1,7 @@
 'use strict'
 import getKey from '../util/utili18.js'
+import { ValidationFromGraph } from '../validation/validationFromGraph'
 
-import { ValidationFromGraph } from '../util/validation.js'
 
 export function drawGraph () {
   const drawingCanvas = document.getElementById('canvas')

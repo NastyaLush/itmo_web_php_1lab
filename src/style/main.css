@@ -29,7 +29,7 @@ html {
 }
 
 .content__scroll::-webkit-scrollbar-track {
-    background-color: rgba(253, 253, 253, 0.78);
+    background-color: rgb(253 253 253 / 30%);
     border-radius: 100px;
 }
 
@@ -38,14 +38,14 @@ html {
     border: 6px;
     border-left: 40px;
     border-right: 4px;
-    background-color: rgba(231, 166, 159, 0.93);
+    background-color:  rgb(246 186 255 / 71%);
 }
 
 .content__scroll {
     display: grid;
     grid-area: table;
     overflow-y: auto;
-    height: 140vh;
+    height: 115vh;
     width: auto;
 }
 
@@ -214,7 +214,7 @@ select.content__labels_r-group_r {
 
 .content__canvas {
     padding: 50px;
-    background: rgba(7, 7, 7, 0.5);
+    background: rgb(7 7 7 / 38%);
 }
 
 .content__labels_x {
@@ -225,7 +225,7 @@ select.content__labels_r-group_r {
 
 .content__labels {
     top: 30px;
-    background: rgba(0, 0, 0, 0.47);
+    background: rgb(7 7 7 / 38%);
 }
 
 
@@ -305,5 +305,5 @@ select.content__labels_r-group_r {
 }
 
 .content__scroll_table_new {
-    animation: ani 2.5s forwards;
+    animation: ani 3.5s forwards;
 }

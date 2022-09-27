@@ -1,7 +1,7 @@
 import { drawGraph } from '../style/canvas.js'
 import { initialisation } from '../connection/firebase.js'
 import { createTable } from '../table/table.js'
-import { validation } from '../util/validation.js'
+import { validation } from '../validation/realtimeValidation.js'
 
 
 const firebaseConfig = {
