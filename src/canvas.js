@@ -1,8 +1,8 @@
 "use strict";
 export function drawGraph() {
-    let drawingCanvas = document.getElementById('canvas');
+    const drawingCanvas = document.getElementById('canvas');
     if (drawingCanvas && drawingCanvas.getContext) {
-        let context = drawingCanvas.getContext('2d');
+        const context = drawingCanvas.getContext('2d');
 
         context.fillStyle = "rgba(147,127,196,0.67)";
         context.beginPath();
@@ -77,13 +77,13 @@ function getCursorPosition(canvas, event) {
     const rect = canvas.getBoundingClientRect()
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
-    let r = document.querySelector('#r').selectedOptions[0].text;
+    const r = document.querySelector('#r').selectedOptions[0].text;
     x = getX(x, r);
     y = createY(getY(y, r), r, x);
     document.getElementById('x').value = x;
     document.getElementById('x').dispatchEvent(new Event('change'));
 
-    let checkbox = document.getElementsByName('y');
+    const checkbox = document.getElementsByName('y');
     for (let i = 0; i < checkbox.length; i++) {
         checkbox[i].checked = false;
     }

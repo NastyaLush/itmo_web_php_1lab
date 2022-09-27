@@ -3,13 +3,11 @@ import {getDatabase, ref, set, push, onValue} from "firebase/database";
 
 export function initialisation(firebaseConfig) {
     initializeApp(firebaseConfig);
-    const app = initializeApp(firebaseConfig);
     const button = document.getElementById('send');
     button.addEventListener('click', (e) => {
         const time = new Date().toUTCString();
         e.preventDefault();
-        let x = parseFloat(document.getElementById('x').value).toLocaleString(3);
-        const y = document.getElementById('checkbox');
+        const x = parseFloat(document.getElementById('x').value).toLocaleString(3);
         const r = document.getElementById('r').value;
         const checkedValue = document.querySelector('.y_text:checked').value;
         const result = getResult(x, checkedValue, r);
@@ -35,7 +33,7 @@ export function initialisation(firebaseConfig) {
         changeClass(send, "active", "no-active");
         send.disabled = true;
 
-        let checkbox = document.getElementsByName('y');
+        const checkbox = document.getElementsByName('y');
         for (let i = 0; i < checkbox.length; i++) {
             checkbox[i].checked = false;
         }
@@ -59,9 +57,9 @@ function isConnection() {
     });
 }
 
-function between(x, x1, x2) {
+function between(arg, downArg, highArg) {
 
-    return x >= x1 && x <= x2;
+    return arg >= downArg && arg <= highArg;
 }
 
 function isInSquare(x, y, r) {

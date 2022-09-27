@@ -42,7 +42,7 @@ export function validation() {
         }
     });
 
-    var checkboxes = document.querySelectorAll("input[type=checkbox][name=y]");
+    const checkboxes = document.querySelectorAll("input[type=checkbox][name=y]");
     let enabledY = []
 
     checkboxes.forEach(function (checkbox) {
