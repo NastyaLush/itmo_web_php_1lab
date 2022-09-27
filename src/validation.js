@@ -1,44 +1,38 @@
 "use strict";
+import * as constants from "./utilConstants";
 
-const errorY = " You should write x between -3 and 3 ";
-const noError = "no-warning";
-const warning = "warning";
-const normal = "normal";
-const error = "error";
-const active = "active";
-const noActive = "no-active";
-const label = document.getElementById("x");
-const send = document.getElementById("send");
-const logX = document.getElementById("log_x");
-const logY = document.getElementById("log_y");
+const label = document.getElementById(constants.x);
+const send = document.getElementById(constants.send);
+const logX = document.getElementById(constants.logX);
+const logY = document.getElementById(constants.logY);
 
 export function validation() {
-    send.classList.add("no-active")
-    document.getElementById("x").addEventListener('change', (uvalue) => {
-        const result = parseFloat(uvalue.target.value);
+    send.classList.add(constants.noActive)
+    document.getElementById(constants.x).addEventListener(constants.change, (value) => {
+        const result = parseFloat(value.target.value);
         if (!(result >= -3 && result <= 3)) {
-            logX.textContent = errorY;
-            changeClass(logX, noError, error);
+            logX.textContent = constants.errorX;
+            changeClass(logX, constants.noError, constants.error);
 
-            label.classList.add(warning);
+            label.classList.add(constants.warning);
             label.focus();
 
-            changeClass(send, active, noActive);
+            changeClass(send, constants.active, constants.noActive);
             send.disabled = true;
 
 
         } else {
-            if (logY.textContent == "") {
-                changeClass(send, noActive, active);
+            if (logY.textContent === constants.withOutError) {
+                changeClass(send, constants.noActive, constants.active);
                 send.disabled = false;
             } else {
-                changeClass(send, active, noActive);
+                changeClass(send, constants.active, constants.noActive);
                 send.disabled = true;
             }
-            changeClass(label, warning, normal);
+            changeClass(label, constants.warning, constants.normal);
 
-            logX.textContent = "";
-            changeClass(logX, error, noError);
+            logX.textContent = constants.withOutError;
+            changeClass(logX, constants.error, constants.noError);
         }
     });
 
@@ -46,23 +40,23 @@ export function validation() {
     let enabledY = []
 
     checkboxes.forEach(function (checkbox) {
-        checkbox.addEventListener('change', function () {
+        checkbox.addEventListener(constants.change, function () {
             enabledY =
                 Array.from(checkboxes)
                     .filter(i => i.checked)
                     .map(i => i.textContent)
-            if (enabledY.length == 1) {
-                logY.textContent = "";
-                changeClass(logY, error, noError);
+            if (enabledY.length === 1) {
+                logY.textContent = constants.withOutError;
+                changeClass(logY, constants.error, constants.noError);
 
-                changeClass(send, noActive, active);
+                changeClass(send, constants.noActive, constants.active);
                 send.disabled = false;
             } else {
-                changeClass(send, active, noActive);
+                changeClass(send, constants.active, constants.noActive);
                 send.disabled = true;
 
-                logY.textContent = "You should choose one y";
-                changeClass(logY, noError, error);
+                logY.textContent = constants.errorY;
+                changeClass(logY, constants.noError, constants.error);
 
             }
         })

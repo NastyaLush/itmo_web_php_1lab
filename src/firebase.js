@@ -1,43 +1,46 @@
 import {initializeApp} from 'firebase/app';
 import {getDatabase, ref, set, push, onValue} from "firebase/database";
-
+import * as constants from "./utilConstants";
 export function initialisation(firebaseConfig) {
     initializeApp(firebaseConfig);
-    const button = document.getElementById('send');
-    button.addEventListener('click', (e) => {
-        const time = new Date().toUTCString();
-        e.preventDefault();
-        const x = parseFloat(document.getElementById('x').value).toLocaleString(3);
-        const r = document.getElementById('r').value;
-        const checkedValue = document.querySelector('.y_text:checked').value;
-        const result = getResult(x, checkedValue, r);
+    const button = document.getElementById(constants.send);
+    button.addEventListener(constants.click,
+        (e) => {
+            const time = new Date().toUTCString();
+            e.preventDefault();
+            const x = parseFloat(document.getElementById(constants.x).value).toLocaleString(3);
+            const r = document.getElementById(constants.y).value;
+            const checkedValue = document.querySelector('.y_text:checked').value;
+            const result = getResult(x, checkedValue, r);
 
-        const database = getDatabase();
-        const reference = ref(database, 'data');
+            const database = getDatabase();
+            const reference = ref(database);
 
-        set(push(reference), {
-            "X": x,
-            "Y": checkedValue,
-            "R": r,
-            "Result": result,
-            "Date": time
+            set(push(reference), {
+                "X": x,
+                "Y": checkedValue,
+                "R": r,
+                "Result": result,
+                "Date": time
+            });
+
+            //back all to the first condition
+            const logX = document.getElementById(constants.logX);
+            const logY = document.getElementById(constants.logY);
+            document.getElementById(constants.x).value = constants.withOutError;
+            changeClass(document.getElementById(constants.x), constants.normal, constants.warning);
+            changeClass(logX, constants.noError, constants.error);
+            changeClass(logY, constants.noError, constants.error);
+            logX.textContent = constants.errorX;
+            logY.textContent = constants.errorY;
+            changeClass(constants.send, constants.active, constants.noActive);
+            constants.send.disabled = true;
+
+            const checkbox = document.getElementsByName(constants.y);
+            for (let i = 0; i < checkbox.length; i++) {
+                checkbox[i].checked = false;
+            }
         });
-
-        //back all to the first condition
-        document.getElementById('x').value = '';
-        changeClass(document.getElementById('x'), "normal", "warning");
-        changeClass(document.getElementById('log_x'), "no-warning", "error");
-        changeClass(document.getElementById('log_y'), "no-warning", "error");
-        document.getElementById("log_x").textContent = " You should write x between -3 and 3 ";
-        document.getElementById("log_y").textContent = "You should choose one y";
-        changeClass(send, "active", "no-active");
-        send.disabled = true;
-
-        const checkbox = document.getElementsByName('y');
-        for (let i = 0; i < checkbox.length; i++) {
-            checkbox[i].checked = false;
-        }
-    });
 
     setTimeout(() => {
         isConnection();
@@ -48,11 +51,8 @@ function isConnection() {
     const db = getDatabase();
     const connectedRef = ref(db, ".info/connected");
     onValue(connectedRef, (snap) => {
-        if (snap.val() === true) {
-            console.log("connected");
-        } else {
-            console.log("not connected");
-            alert("Please check your connection to the internet");
+        if (!(snap.val() === true)) {
+            alert(constants.connectionError);
         }
     });
 }
@@ -86,8 +86,8 @@ function isInShape(x, y, r) {
 }
 
 function getResult(x, y, r) {
-    if (isInShape(x, y, r)) return 'reach';
-    return 'miss';
+    if (isInShape(x, y, r)) return constants.reach;
+    return constants.miss;
 }
 
 function changeClass(label, oldClass, newClass) {
