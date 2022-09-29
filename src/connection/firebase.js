@@ -12,13 +12,38 @@ let uid;
 export function initialisation (firebaseConfig) {
   initializeApp(firebaseConfig)
   const button = document.getElementById(getKey('send', 'constant'))
+  const x = document.getElementById(getKey('logX', 'constant'))
+  const y = document.getElementById(getKey('logY', 'constant'))
   button.addEventListener(getKey('click', 'constant'),
     (e) => {
+    if(button.classList.contains(getKey('active', 'constant'))) {
+      console.log("right")
       const valid = new ValidationFromLabels()
       e.preventDefault()
-      addData(valid);
+      addData(valid)
       valid.backToFirstCondition(button)
+    }
+    else {
+      console.log("error")
+      e.preventDefault();
+      let i=0;
+       let timer = setInterval(function() {
+        if (i>7) {
+          clearInterval(timer);
+          return;
+        }
+        draw(i);
+        i++;
+      }, 20);
+    }
     })
+
+  function draw(i){
+    x.style.marginLeft= (i%3-1)*2 +'px';
+    x.style.fontSize= 20 + 'px';
+    y.style.fontSize= 20 + 'px';
+    y.style.marginLeft= (i%3-1)*2 +'px';
+  }
 
   setTimeout(() => {
     isConnection()
@@ -34,6 +59,8 @@ export function initialisation (firebaseConfig) {
     }
   });
 }
+
+
 
 export function addData(valid){
   const database = getDatabase()

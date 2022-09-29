@@ -60,10 +60,8 @@ export class ClassManager {
   #manageSend () {
     if (this.#correct === true) {
       changeClass(this.#send, getKey('noActive', 'constant'), getKey('active', 'constant'))
-      this.#send.disabled = false
     } else {
       changeClass(this.#send, getKey('active', 'constant'), getKey('noActive', 'constant'))
-      this.#send.disabled = true
     }
   }
 }

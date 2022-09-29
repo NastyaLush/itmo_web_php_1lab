@@ -133,6 +133,7 @@ html {
     border-radius: 6px;
     margin: 8px 6px;
     width: 400px;
+    padding-left: 10px;
 }
 
 .content__labels_no-warning {
@@ -217,7 +218,7 @@ select.content__labels_r-group_r {
 }
 
 .content__labels_x {
-    padding: 10px 0 5px 5px;
+    padding: 10px 0 5px 0;
     top: 250px;
     grid-template-columns: 1.3fr 2fr 3fr;
 }
