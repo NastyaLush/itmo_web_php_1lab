@@ -25,11 +25,12 @@ export class ValidationFromLabels {
     logX.textContent = getKey('errorX', 'constant')
     logY.textContent = getKey('errorY', 'constant')
     changeClass(button, getKey('active', 'constant'), getKey('noActive', 'constant'))
-    button.disabled = true
 
     const checkbox = document.getElementsByName(getKey('y', 'constant'))
     for (let i = 0; i < checkbox.length; i++) {
       checkbox[i].checked = false
     }
+    logX.style.fontSize= "15px";
+    logY.style.fontSize= "15px";
   }
 }
