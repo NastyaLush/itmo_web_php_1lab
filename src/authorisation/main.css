@@ -1,9 +1,5 @@
 html {
-    /*background: url(*/
-    /*https://kartinkin.net/uploads/posts/2021-07/thumbs/1625733496_34-kartinkin-com-p-fioletovie-oboi-minimalizm-krasivie-34.jpg) no-repeat fixed center/cover;*/
-    /*position: relative;*/
-    /*overflow-y: scroll;*/
-    background: rgb(177 91 212 / 58%);
+    background: rgba(170, 86, 204, 0.58);
 }
 .body__auth-container{
     display: block;
@@ -15,10 +11,90 @@ html {
     margin-top: 40px;
     background: rgba(3, 3, 3, 0.58);
 }
-img{
-    width: 150px;
-    height: 150px;
-    display: block;
-    margin-top: 15%;
-    margin-right: auto;
+.sat{
+    margin-top: 5%;
 }
+img{
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin-top: 1px;
+    animation: sheep 0.8s forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+.run {
+    animation-play-state: running;
+}
+p {
+    font-size: 24px;
+    position: relative;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background-color: #fff;
+    border: 8px solid #605d7b;
+    border-radius: 30px;
+
+
+    animation: thought 0.01s forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+p.run::after{
+    content: "Caught me!!!";
+    animation-play-state: running;
+}
+p.stop {
+    animation: nnani 1.3s forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+@keyframes nnani {
+    to{
+        color: #ec7777;
+    }
+    from{
+        color: #070707;
+    }
+}
+
+p.run{
+    border: 8px solid #f65252;
+}
+p.stop::after{
+    content: "Click sheep!!!";
+}
+p.stop{
+
+}
+
+@keyframes sheep {
+    from {
+        margin-left: 0;
+    }
+
+    to {
+        margin-left: calc(100% - 200px);
+    }
+
+}
+@keyframes thought {
+    from {
+        margin-left: 0.15%;
+    }
+
+    to {
+        margin-left: 0;
+    }
+
+}
+

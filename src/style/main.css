@@ -119,7 +119,6 @@ html {
     font-weight: 300;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    letter-spacing: 2px;
     border-radius: 4px;
     background-color: rgba(248, 160, 160, 0.78);
 
@@ -128,12 +127,11 @@ html {
 .content__labels_error, .content__labels_x_menu,.content__labels_r-group_menu,.content__labels_y_menu{
     color: #f34848;
     font-weight: normal;
-    font-family: 'Shadows Into Light', sans-serif;
+    font-family: 'Abyssinica SIL', serif;
     text-shadow: 0 1px 2px #000;
     background: rgba(0, 0, 0, 0.47);
     border-radius: 6px;
     margin: 8px 6px;
-    letter-spacing: 2px;
     width: 400px;
 }
 
@@ -164,9 +162,10 @@ select.content__labels_r-group_r {
 
 .content__labels_x_menu, .content__labels_r-group_menu, .content__labels_y_menu{
     background: rgba(0, 0, 0, 0);
-    color: #acafe1;
+    color: #ced0e7;
     text-decoration: underline;
-    letter-spacing: 4px;
+    font-size: 18px;
+    letter-spacing: 2px;
 }
 
 .content__labels_active, .content__labels_no-active {
@@ -271,7 +270,7 @@ select.content__labels_r-group_r {
 .content__scroll_table_row {
     display: table-row;
     width: auto;
-    animation: nani 3.5s forwards;
+    animation: nani 1.5s forwards;
 }
 
 @keyframes ani {
@@ -305,5 +304,5 @@ select.content__labels_r-group_r {
 }
 
 .content__scroll_table_new {
-    animation: ani 3.5s forwards;
+    animation: ani 1s forwards;
 }

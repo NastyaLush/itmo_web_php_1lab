@@ -14,6 +14,11 @@ i18next.init({
         literalColor: 'rgba(255,255,255,0.93)'
       },
       constant: {
+        running:"running",
+        thoughts:"body__sheepAndThoughts_thoughts",
+        run: "run",
+        stop: "stop",
+        sheep: 'body__sheepAndThoughts_sheep',
         errorX: ' You should write x between -3 and 3 ',
         noError: 'content__labels_no-warning',
         warning: 'content__labels_x_warning',
