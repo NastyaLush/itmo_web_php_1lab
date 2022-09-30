@@ -45,7 +45,7 @@ html {
     display: grid;
     grid-area: table;
     overflow-y: auto;
-    height: 115vh;
+    height: 145vh;
     width: auto;
 }
 
